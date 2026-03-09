@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahlec Laia — Video Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 1 — HERO
+  ═══════════════════════════════════════════════ -->
+  <section class="hero-section" id="hero">
+    <div class="hero-motion-lines">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="hero-floating-dots">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="hero-container">
+      <!-- Credibility badges -->
+      <div class="hero-credibility">
+        <div class="credibility-badge">
+          <span class="badge-label">Elite Agency</span>
+          <span class="badge-value">€1.250 / mês</span>
+        </div>
+        <div class="credibility-divider"></div>
+        <div class="credibility-badge">
+          <span class="badge-label">Orgheal × João Alfar</span>
+          <span class="badge-value">€10k em 30 dias</span>
+        </div>
+      </div>
+
+      <!-- Profile -->
+      <div class="hero-profile">
+        <div class="profile-image-wrapper">
+          <img
+            src="https://res.cloudinary.com/dooigd0d3/image/upload/v1769610431/New_Perfil_4_wenty9.png"
+            alt="Ahlec Laia"
+            class="profile-image"
+          />
+          <div class="profile-glow"></div>
+        </div>
+        <div class="profile-info">
+          <span class="profile-name">Ahlec Laia</span>
+          <span class="profile-title">Video Editor &amp; Content Strategist</span>
+        </div>
+      </div>
+
+      <!-- Headline -->
+      <div class="hero-headline">
+        <h1>
+          <span class="headline-line">Cada Segundo Conta.</span>
+          <span class="headline-line accent">Cada Frame Converte.</span>
+        </h1>
+        <p class="hero-subheadline">
+          Edição de vídeo estratégica para criadores e marcas que querem resultados reais — mais retenção, mais conversões, mais crescimento.
+        </p>
+      </div>
+
+      <!-- VSL Video -->
+      <div class="hero-video-wrapper">
+        <div class="video-container" id="heroVideoContainer">
+          <video
+            id="heroVideo"
+            class="hero-video"
+            poster="https://res.cloudinary.com/dooigd0d3/image/upload/v1770816522/brave_screenshot_framer.com_2_jug9cy.png"
+            playsinline
+            preload="metadata"
+          >
+            <!-- Replace src with actual VSL video URL -->
+            <source src="" type="video/mp4" />
+          </video>
+          <div class="video-overlay" id="heroVideoOverlay">
+            <button class="video-play-btn" id="heroPlayBtn" aria-label="Reproduzir vídeo">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benefits -->
+      <ul class="hero-benefits">
+        <li>
+          <span class="benefit-icon">✦</span>
+          <span>Retenção até 3× maior nos primeiros 3 segundos</span>
+        </li>
+        <li>
+          <span class="benefit-icon">✦</span>
+          <span>Edição orientada por dados de performance</span>
+        </li>
+        <li>
+          <span class="benefit-icon">✦</span>
+          <span>Entrega rápida sem comprometer a qualidade</span>
+        </li>
+      </ul>
+
+      <!-- Exclusivity notice -->
+      <div class="hero-exclusivity">
+        <span class="exclusivity-dot"></span>
+        <p>Aceito apenas <strong>5 clientes por mês</strong> para garantir qualidade máxima em cada projeto.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="hero-cta">
+        <a
+          href="https://calendly.com/ahlecprofissional/reuniao-estrategica-gratuita?back=1&month=2026-02"
+          class="btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          Agendar Reunião Gratuita
+        </a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator">
+        <span class="scroll-label">Descobre mais</span>
+        <div class="scroll-arrow">
+          <span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 2 — PROBLEM
+  ═══════════════════════════════════════════════ -->
+  <section class="problem-section" id="problem">
+    <div class="problem-floating-shapes">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="problem-container">
+      <div class="section-header">
+        <span class="section-tag">O Problema</span>
+        <h2>O que está a travar o teu crescimento?</h2>
+        <p class="section-subtitle">A maioria dos criadores perde clientes e seguidores por estes 4 erros críticos.</p>
+      </div>
+
+      <div class="problem-grid">
+        <div class="problem-card" data-index="0">
+          <div class="problem-card-icon">⏱</div>
+          <h3>Tempo</h3>
+          <p>Horas perdidas a editar quando devias estar a criar conteúdo, fazer vendas ou simplesmente descansar.</p>
+        </div>
+        <div class="problem-card" data-index="1">
+          <div class="problem-card-icon">📉</div>
+          <h3>Consistência</h3>
+          <p>Publicar de forma irregular destrói o algoritmo. Sem consistência, não há crescimento sustentável.</p>
+        </div>
+        <div class="problem-card" data-index="2">
+          <div class="problem-card-icon">🎯</div>
+          <h3>Conversão</h3>
+          <p>Vídeos bonitos que não vendem. A edição precisa de ser estratégica para transformar visualizações em clientes.</p>
+        </div>
+        <div class="problem-card" data-index="3">
+          <div class="problem-card-icon">✨</div>
+          <h3>Qualidade</h3>
+          <p>Edições amadoras afastam o teu público ideal e desvalorizam o teu trabalho independentemente do conteúdo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 3 — SOLUTION
+  ═══════════════════════════════════════════════ -->
+  <section class="solution-section" id="solution">
+    <div class="solution-container">
+      <div class="solution-left">
+        <div class="section-header">
+          <span class="section-tag">A Solução</span>
+          <h2>Edição que trabalha para ti enquanto dormes</h2>
+        </div>
+
+        <div class="solution-accordion" id="solutionAccordion">
+          <div class="accordion-item" data-index="0">
+            <button class="accordion-trigger">
+              <span class="accordion-number">01</span>
+              <span class="accordion-title">Estratégia primeiro, edição depois</span>
+              <span class="accordion-arrow">+</span>
+            </button>
+            <div class="accordion-body">
+              <p>Cada vídeo começa com uma análise do teu público, objetivos e métricas de performance. Só depois pego nas tesouras.</p>
+            </div>
+          </div>
+          <div class="accordion-item" data-index="1">
+            <button class="accordion-trigger">
+              <span class="accordion-number">02</span>
+              <span class="accordion-title">Hooks que prendem nos primeiros 3 segundos</span>
+              <span class="accordion-arrow">+</span>
+            </button>
+            <div class="accordion-body">
+              <p>O segredo da retenção está na abertura. Utilizo técnicas testadas de pattern interrupt e curiosity gaps para manter o teu público colado ao ecrã.</p>
+            </div>
+          </div>
+          <div class="accordion-item" data-index="2">
+            <button class="accordion-trigger">
+              <span class="accordion-number">03</span>
+              <span class="accordion-title">Ritmo e pacing otimizados por plataforma</span>
+              <span class="accordion-arrow">+</span>
+            </button>
+            <div class="accordion-body">
+              <p>O que funciona no YouTube não funciona no Instagram. Cada plataforma tem o seu ritmo ideal — e eu sei exatamente qual é.</p>
+            </div>
+          </div>
+          <div class="accordion-item" data-index="3">
+            <button class="accordion-trigger">
+              <span class="accordion-number">04</span>
+              <span class="accordion-title">Entrega rápida com revisões ilimitadas</span>
+              <span class="accordion-arrow">+</span>
+            </button>
+            <div class="accordion-body">
+              <p>Primeiros drafts em 48h. Revisões até ficares 100% satisfeito. Sem stress, sem atrasos, sem surpresas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-right">
+        <div class="solution-image-wrapper">
+          <img
+            src="https://res.cloudinary.com/dooigd0d3/image/upload/v1770244054/Pro_Photos_for_Portfólio_4_pnr78y.png"
+            alt="Ahlec Laia working"
+            class="solution-image"
+          />
+        </div>
+        <div class="solution-warning-box">
+          <span class="warning-icon">⚡</span>
+          <p><strong>Atenção:</strong> Se o teu vídeo não retém nos primeiros 3 segundos, o algoritmo para de o distribuir. Ponto final.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 4 — METHODOLOGY
+  ═══════════════════════════════════════════════ -->
+  <section class="methodology-section" id="methodology">
+    <div class="methodology-container">
+      <div class="section-header">
+        <span class="section-tag">Metodologia</span>
+        <h2>Framework 3C — O meu processo</h2>
+        <p class="section-subtitle">Um sistema testado e comprovado para transformar raw footage em conteúdo que converte.</p>
+      </div>
+
+      <!-- Framework 3C -->
+      <div class="framework-3c">
+        <div class="framework-card">
+          <span class="framework-letter">C</span>
+          <h3>Capturar</h3>
+          <p>Analisar o raw footage, identificar os momentos de maior impacto e planear a narrativa.</p>
+        </div>
+        <div class="framework-arrow">→</div>
+        <div class="framework-card">
+          <span class="framework-letter">C</span>
+          <h3>Construir</h3>
+          <p>Montar a edição com ritmo, color grading, motion graphics e sound design estratégico.</p>
+        </div>
+        <div class="framework-arrow">→</div>
+        <div class="framework-card">
+          <span class="framework-letter">C</span>
+          <h3>Converter</h3>
+          <p>Otimizar cada elemento para maximizar retenção, engagement e conversão na plataforma alvo.</p>
+        </div>
+      </div>
+
+      <!-- 5-step timeline -->
+      <div class="methodology-timeline">
+        <div class="timeline-item" data-step="1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-step">Passo 01</span>
+            <h4>Briefing &amp; Estratégia</h4>
+            <p>Call de 30 min para alinhar objetivos, público e métricas de sucesso.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-step="2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-step">Passo 02</span>
+            <h4>Análise do Footage</h4>
+            <p>Revisão completa do material e identificação dos melhores momentos.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-step="3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-step">Passo 03</span>
+            <h4>Edição &amp; Montagem</h4>
+            <p>Produção do primeiro draft em até 48 horas.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-step="4">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-step">Passo 04</span>
+            <h4>Revisões</h4>
+            <p>Ajustes ilimitados até aprovação total. A tua satisfação é garantida.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-step="5">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-step">Passo 05</span>
+            <h4>Entrega &amp; Otimização</h4>
+            <p>Entrega nos formatos corretos para cada plataforma com recomendações de publicação.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 5 — PORTFOLIO (Simple Carousel)
+  ═══════════════════════════════════════════════ -->
+  <section class="portfolio-section portfolio-simple" id="portfolio">
+    <div class="portfolio-container">
+      <div class="section-header">
+        <span class="section-tag">Portfólio</span>
+        <h2>Trabalhos recentes</h2>
+        <p class="section-subtitle">Uma seleção dos projetos mais recentes — cada um com um objetivo estratégico claro.</p>
+      </div>
+
+      <div class="carousel-wrapper simple-carousel-wrapper">
+        <div class="carousel-track simple-track" id="simpleCarouselTrack">
+          <!-- Card 1 -->
+          <div class="video-card portrait-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video1.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video1.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="video-card portrait-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video2.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video2.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="video-card portrait-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video3.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video3.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="video-card portrait-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video4.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video4.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="video-card portrait-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video5.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video5.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="video-card portrait-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video6.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video6.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <!-- Card 7 — Vimeo -->
+          <div class="video-card portrait-card" data-video-src="https://player.vimeo.com/video/1163810483?h=09fb6c32ce" data-type="vimeo" data-thumb="https://res.cloudinary.com/dooigd0d3/image/upload/v1770816522/brave_screenshot_framer.com_2_jug9cy.png">
+            <div class="video-thumb-wrapper">
+              <img class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/image/upload/v1770816522/brave_screenshot_framer.com_2_jug9cy.png" alt="Vimeo video" />
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <!-- Duplicates for infinite scroll -->
+          <div class="video-card portrait-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video1.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video1.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <div class="video-card portrait-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video2.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video2.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <div class="video-card portrait-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video3.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video3.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <div class="video-card portrait-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video4.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video4.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <div class="video-card portrait-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video5.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video5.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <div class="video-card portrait-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video6.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video6.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <div class="video-card portrait-card" data-video-src="https://player.vimeo.com/video/1163810483?h=09fb6c32ce" data-type="vimeo" data-thumb="https://res.cloudinary.com/dooigd0d3/image/upload/v1770816522/brave_screenshot_framer.com_2_jug9cy.png">
+            <div class="video-thumb-wrapper">
+              <img class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/image/upload/v1770816522/brave_screenshot_framer.com_2_jug9cy.png" alt="Vimeo video" />
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 6 — PORTFOLIO (Advanced Carousel)
+  ═══════════════════════════════════════════════ -->
+  <section class="portfolio-section portfolio-advanced" id="portfolio-advanced">
+    <div class="portfolio-container">
+      <div class="section-header">
+        <span class="section-tag">Portfólio</span>
+        <h2>Mais trabalhos</h2>
+        <p class="section-subtitle">Projetos variados para diferentes plataformas e formatos.</p>
+      </div>
+
+      <button class="toggle-autoscroll-btn" id="toggleAutoScroll">⏸ Pausar</button>
+
+      <div class="carousel-wrapper advanced-carousel-wrapper">
+        <div class="carousel-track advanced-track" id="advancedCarouselTrack">
+          <!-- Column 1 — portrait -->
+          <div class="video-card portrait-card adv-card" data-video-src="https://www.youtube.com/embed/dQw4w9WgXcQ" data-type="youtube">
+            <div class="video-thumb-wrapper">
+              <img class="thumb-video" src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="YouTube video" />
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <!-- Column 2 — landscape -->
+          <div class="video-card landscape-card adv-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video_landscape1.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video_landscape1.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <!-- Column 3 — portrait -->
+          <div class="video-card portrait-card adv-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video7.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video7.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <!-- Column 4 — landscape -->
+          <div class="video-card landscape-card adv-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video_landscape2.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video_landscape2.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <!-- Column 5 — portrait -->
+          <div class="video-card portrait-card adv-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video8.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video8.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <!-- Duplicates for infinite scroll -->
+          <div class="video-card portrait-card adv-card" data-video-src="https://www.youtube.com/embed/dQw4w9WgXcQ" data-type="youtube">
+            <div class="video-thumb-wrapper">
+              <img class="thumb-video" src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="YouTube video" />
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <div class="video-card landscape-card adv-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video_landscape1.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video_landscape1.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <div class="video-card portrait-card adv-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video7.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video7.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <div class="video-card landscape-card adv-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video_landscape2.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video_landscape2.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+          <div class="video-card portrait-card adv-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video8.mp4" data-type="mp4">
+            <div class="video-thumb-wrapper">
+              <video class="thumb-video" src="https://res.cloudinary.com/dooigd0d3/video/upload/v1769610395/video8.mp4" muted playsinline preload="none"></video>
+              <div class="play-overlay"><span>▶</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 7 — COMPARISON
+  ═══════════════════════════════════════════════ -->
+  <section class="comparison-section" id="comparison">
+    <div class="comparison-container">
+      <div class="section-header">
+        <span class="section-tag">Comparação</span>
+        <h2>Tradicional vs. Ahlec Laia</h2>
+        <p class="section-subtitle">Vê a diferença entre edição genérica e edição estratégica.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="comparison-col comparison-traditional">
+          <h3 class="comparison-col-title">❌ Editor Tradicional</h3>
+          <ul class="comparison-list">
+            <li>Edita o vídeo como recebe o footage</li>
+            <li>Sem análise de performance prévia</li>
+            <li>Entrega em semanas</li>
+            <li>Revisões cobradas à parte</li>
+            <li>Sem estratégia de plataforma</li>
+            <li>Comunicação lenta e imprecisa</li>
+            <li>Um formato, todas as plataformas</li>
+          </ul>
+        </div>
+        <div class="comparison-col comparison-ahlec">
+          <h3 class="comparison-col-title">✅ Ahlec Laia</h3>
+          <ul class="comparison-list">
+            <li>Análise estratégica antes de editar</li>
+            <li>Baseado em dados de retenção e conversão</li>
+            <li>Primeiros drafts em 48 horas</li>
+            <li>Revisões ilimitadas incluídas</li>
+            <li>Otimizado para cada plataforma</li>
+            <li>Comunicação rápida e transparente</li>
+            <li>Formatos específicos por canal</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="comparison-callout">
+        <p>Pronto para ter um editor que trabalha <em>com</em> a tua estratégia, não <em>contra</em> ela?</p>
+        <a href="https://calendly.com/ahlecprofissional/reuniao-estrategica-gratuita?back=1&month=2026-02" class="btn-primary" target="_blank" rel="noopener">
+          Quero Resultados Reais
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 8 — PRICING
+  ═══════════════════════════════════════════════ -->
+  <section class="pricing-section" id="pricing">
+    <div class="pricing-container">
+      <div class="section-header">
+        <span class="section-tag">Investimento</span>
+        <h2>Escolhe o teu plano</h2>
+        <p class="section-subtitle">Planos flexíveis para criadores em diferentes etapas de crescimento.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Essencial -->
+        <div class="pricing-card" data-plan="essencial">
+          <div class="pricing-card-header">
+            <span class="plan-name">Essencial</span>
+            <div class="plan-price">
+              <span class="price-amount">€397</span>
+              <span class="price-period">/ mês</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li>4 vídeos curtos por mês</li>
+            <li>Color grading profissional</li>
+            <li>Sound design básico</li>
+            <li>2 revisões por vídeo</li>
+            <li>Entrega em 72 horas</li>
+            <li>Suporte por email</li>
+          </ul>
+          <a href="https://calendly.com/ahlecprofissional/reuniao-estrategica-gratuita?back=1&month=2026-02" class="btn-outline" target="_blank" rel="noopener">
+            Começar Agora
+          </a>
+        </div>
+
+        <!-- Pro (featured) -->
+        <div class="pricing-card pricing-featured" data-plan="pro">
+          <div class="pricing-badge">Mais Popular</div>
+          <div class="pricing-card-header">
+            <span class="plan-name">Pro</span>
+            <div class="plan-price">
+              <span class="price-amount">€597</span>
+              <span class="price-period">/ mês</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li>8 vídeos curtos por mês</li>
+            <li>Color grading avançado</li>
+            <li>Sound design completo</li>
+            <li>Motion graphics incluídos</li>
+            <li>Revisões ilimitadas</li>
+            <li>Entrega em 48 horas</li>
+            <li>Suporte prioritário via WhatsApp</li>
+            <li>Relatório mensal de performance</li>
+          </ul>
+          <a href="https://calendly.com/ahlecprofissional/reuniao-estrategica-gratuita?back=1&month=2026-02" class="btn-primary" target="_blank" rel="noopener">
+            Começar Agora
+          </a>
+        </div>
+
+        <!-- Elite -->
+        <div class="pricing-card" data-plan="elite">
+          <div class="pricing-card-header">
+            <span class="plan-name">Elite</span>
+            <div class="plan-price">
+              <span class="price-amount">€1.197</span>
+              <span class="price-period">/ mês</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li>Vídeos ilimitados</li>
+            <li>Todos os recursos Pro</li>
+            <li>Vídeos longos incluídos</li>
+            <li>Estratégia de conteúdo mensal</li>
+            <li>Thumbnails personalizadas</li>
+            <li>Entrega em 24 horas</li>
+            <li>Gestor dedicado</li>
+            <li>Acesso prioritário 24/7</li>
+          </ul>
+          <a href="https://calendly.com/ahlecprofissional/reuniao-estrategica-gratuita?back=1&month=2026-02" class="btn-outline" target="_blank" rel="noopener">
+            Começar Agora
+          </a>
+        </div>
+      </div>
+
+      <p class="pricing-footer-note">
+        * Todos os planos incluem uma chamada estratégica gratuita de 30 minutos. Sem contratos de longa duração — cancela quando quiseres.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 9 — FREE CALL
+  ═══════════════════════════════════════════════ -->
+  <section class="freecall-section" id="freecall">
+    <div class="freecall-container">
+      <div class="freecall-card">
+        <div class="freecall-left">
+          <span class="section-tag">Chamada Gratuita</span>
+          <h2>Vamos falar sobre o teu projeto?</h2>
+          <p>30 minutos sem compromisso para perceber como posso ajudar a fazer crescer o teu canal e converter mais com os teus vídeos.</p>
+
+          <div class="freecall-stats">
+            <div class="stat-item">
+              <span class="stat-number">+50</span>
+              <span class="stat-label">Projetos entregues</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">3×</span>
+              <span class="stat-label">Mais retenção média</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">48h</span>
+              <span class="stat-label">Tempo de entrega</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="freecall-right">
+          <a
+            href="https://wa.me/351965373520"
+            class="btn-whatsapp"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" class="whatsapp-icon">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Falar no WhatsApp
+          </a>
+          <a
+            href="https://calendly.com/ahlecprofissional/reuniao-estrategica-gratuita?back=1&month=2026-02"
+            class="btn-outline"
+            target="_blank"
+            rel="noopener"
+          >
+            Agendar pelo Calendly
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 10 — ABOUT
+  ═══════════════════════════════════════════════ -->
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <div class="about-profile-block">
+        <div class="about-image-wrapper">
+          <img
+            src="https://res.cloudinary.com/dooigd0d3/image/upload/v1769610431/New_Perfil_4_wenty9.png"
+            alt="Ahlec Laia"
+            class="about-image"
+          />
+        </div>
+        <div class="about-content">
+          <span class="section-tag">Sobre mim</span>
+          <h2>Ahlec Laia</h2>
+          <p class="about-bio">
+            Sou editor de vídeo especializado em conteúdo para redes sociais com foco em resultados. Trabalho com criadores de conteúdo, coaches e marcas que querem transformar a sua presença digital através de vídeos estrategicamente editados.
+          </p>
+          <p class="about-bio">
+            A minha abordagem combina técnica cinematográfica com estratégia de conteúdo — cada corte, cada transição, cada elemento sonoro é pensado para maximizar a retenção e a conversão.
+          </p>
+          <div class="about-social-links">
+            <a href="https://linkedin.com/in/ahleclaia" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="mailto:ahlecprofissional@gmail.com" class="social-link" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+            <a href="https://instagram.com/ahlec.laia" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://wa.me/351965373520" class="social-link" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <span class="footer-logo">Ahlec Laia</span>
+          <p>Editor de vídeo estratégico para criadores e marcas que querem crescer com conteúdo que converte.</p>
+          <div class="footer-social">
+            <a href="https://linkedin.com/in/ahleclaia" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            <a href="https://instagram.com/ahlec.laia" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+            <a href="https://wa.me/351965373520" target="_blank" rel="noopener" aria-label="WhatsApp">wa</a>
+            <a href="mailto:ahlecprofissional@gmail.com" aria-label="Email">@</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#pricing">Preços</a></li>
+            <li><a href="#methodology">Metodologia</a></li>
+            <li><a href="#freecall">Chamada Gratuita</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#about">Sobre mim</a></li>
+            <li><a href="#comparison">Comparação</a></li>
+            <li><a href="#problem">O Problema</a></li>
+            <li><a href="#solution">A Solução</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:ahlecprofissional@gmail.com">ahlecprofissional@gmail.com</a></li>
+            <li><a href="https://wa.me/351965373520" target="_blank" rel="noopener">+351 965 373 520</a></li>
+            <li><a href="https://calendly.com/ahlecprofissional/reuniao-estrategica-gratuita?back=1&month=2026-02" target="_blank" rel="noopener">Agendar Reunião</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Ahlec Laia. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════
+       STICKY CTA STRIP
+  ═══════════════════════════════════════════════ -->
+  <div class="ahlec-capacity-strip" id="capacityStrip">
+    <div class="strip-content">
+      <span class="strip-dot"></span>
+      <p>Apenas <strong>5 vagas disponíveis</strong> este mês — não percas o teu lugar.</p>
+      <a
+        href="https://calendly.com/ahlecprofissional/reuniao-estrategica-gratuita?back=1&month=2026-02"
+        class="strip-cta"
+        target="_blank"
+        rel="noopener"
+      >
+        Garantir Vaga →
+      </a>
+    </div>
+    <button class="strip-close" id="stripClose" aria-label="Fechar">✕</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       VIDEO MODALS
+  ═══════════════════════════════════════════════ -->
+  <!-- Simple carousel modal -->
+  <div class="video-modal" id="simpleVideoModal">
+    <div class="modal-backdrop" id="simpleModalBackdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="simpleModalClose" aria-label="Fechar">✕</button>
+      <div class="modal-video-wrapper" id="simpleModalVideoWrapper"></div>
+    </div>
+  </div>
+
+  <!-- Advanced carousel modal -->
+  <div class="video-modal" id="advancedVideoModal">
+    <div class="modal-backdrop" id="advancedModalBackdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="advancedModalClose" aria-label="Fechar">✕</button>
+      <div class="modal-video-wrapper" id="advancedModalVideoWrapper"></div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
