@@ -1,136 +1,109 @@
-/* ============================================================
-   AHLEC LAIA — PREMIUM VIDEO EDITOR
-   Main JavaScript — All Interactive Functionality
-   ============================================================ */
-
 'use strict';
 
 /* ============================================================
-   1. SCROLL PROGRESS BAR
-   ============================================================ */
-function initScrollProgressBar() {
+   SCROLL PROGRESS BAR
+============================================================ */
+(function () {
     const bar = document.getElementById('scroll-progress-bar');
     if (!bar) return;
-
-    function updateBar() {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        bar.style.width = pct + '%';
+    function update() {
+        const h = document.documentElement;
+        const pct = (window.scrollY / (h.scrollHeight - h.clientHeight)) * 100;
+        bar.style.width = Math.min(pct, 100) + '%';
     }
-
-    window.addEventListener('scroll', updateBar, { passive: true });
-    updateBar();
-}
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+})();
 
 /* ============================================================
-   2. SECTION INDICATOR DOTS + POPUP LABEL
-   ============================================================ */
-function initSectionIndicator() {
+   SECTION INDICATOR DOTS + POPUP
+============================================================ */
+(function () {
     const dots = document.querySelectorAll('.section-dot');
     const popup = document.getElementById('section-popup');
     const popupText = document.getElementById('section-popup-text');
     if (!dots.length) return;
 
-    const sectionNames = {
-        'hero': 'Início',
-        'portfolio': 'Portfólio',
-        'problema': 'O Problema',
-        'solucao': 'A Solução',
-        'metodologia': 'Metodologia',
-        'diferenciacao': 'Diferenciação',
-        'precos': 'Preços',
-        'chamada': 'Chamada Gratuita',
-        'sobre': 'Sobre Mim',
+    const labels = {
+        hero: 'Início', portfolio: 'Portfólio', problema: 'O Problema',
+        solucao: 'A Solução', metodologia: 'Metodologia', diferenciacao: 'Diferenciação',
+        precos: 'Preços', chamada: 'Chamada', sobre: 'Sobre Mim',
         'trabalhos-recentes': 'Trabalhos Recentes'
     };
+    const sections = Array.from(dots).map(d => document.getElementById(d.getAttribute('data-section'))).filter(Boolean);
 
-    const sections = Array.from(dots).map(dot => {
-        const id = dot.getAttribute('data-section');
-        return document.getElementById(id);
-    }).filter(Boolean);
-
-    let popupTimeout;
-
-    function updateActiveDot() {
-        const scrollY = window.scrollY + window.innerHeight * 0.4;
-        let activeIdx = 0;
-
-        sections.forEach((section, i) => {
-            if (section && scrollY >= section.offsetTop) {
-                activeIdx = i;
-            }
-        });
-
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === activeIdx);
-        });
-
-        // Show popup
-        const activeDot = dots[activeIdx];
-        const sectionId = activeDot ? activeDot.getAttribute('data-section') : '';
-        const label = sectionNames[sectionId] || '';
-        if (popup && popupText && label) {
-            popupText.textContent = label;
+    let timer;
+    function update() {
+        const mid = window.scrollY + window.innerHeight * 0.35;
+        let idx = 0;
+        sections.forEach((s, i) => { if (s && mid >= s.offsetTop) idx = i; });
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+        if (popup && popupText) {
+            const id = dots[idx] && dots[idx].getAttribute('data-section');
+            popupText.textContent = labels[id] || '';
             popup.classList.add('visible');
-            clearTimeout(popupTimeout);
-            popupTimeout = setTimeout(() => popup.classList.remove('visible'), 1500);
+            clearTimeout(timer);
+            timer = setTimeout(() => popup.classList.remove('visible'), 1600);
         }
     }
-
-    // Smooth scroll on dot click
-    dots.forEach(dot => {
-        dot.addEventListener('click', e => {
+    dots.forEach(d => {
+        d.addEventListener('click', e => {
             e.preventDefault();
-            const id = dot.getAttribute('data-section');
-            const target = document.getElementById(id);
-            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const t = document.getElementById(d.getAttribute('data-section'));
+            if (t) t.scrollIntoView({ behavior: 'smooth' });
         });
     });
-
-    window.addEventListener('scroll', updateActiveDot, { passive: true });
-    updateActiveDot();
-}
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+})();
 
 /* ============================================================
-   3. STICKY HEADER
-   ============================================================ */
-function initStickyHeader() {
-    const header = document.getElementById('site-header');
-    if (!header) return;
+   STICKY HEADER
+============================================================ */
+(function () {
+    const h = document.getElementById('site-header');
+    if (!h) return;
+    function tick() { h.classList.toggle('scrolled', window.scrollY > 50); }
+    window.addEventListener('scroll', tick, { passive: true });
+    tick();
+})();
 
-    function onScroll() {
-        if (window.scrollY > 60) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+/* ============================================================
+   HEADER ACTIVE NAV LINKS
+============================================================ */
+(function () {
+    const links = document.querySelectorAll('.header-nav-link');
+    if (!links.length) return;
+    const ids = ['portfolio', 'metodologia', 'precos', 'sobre', 'chamada'];
+    const secs = ids.map(id => document.getElementById(id)).filter(Boolean);
+    function tick() {
+        const mid = window.scrollY + window.innerHeight * 0.35;
+        let cur = null;
+        secs.forEach(s => { if (mid >= s.offsetTop) cur = s.id; });
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur));
     }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-}
+    window.addEventListener('scroll', tick, { passive: true });
+    tick();
+})();
 
 /* ============================================================
-   4. HAMBURGER MENU
-   ============================================================ */
-function initHamburgerMenu() {
+   HAMBURGER MENU (mobile only)
+============================================================ */
+(function () {
     const btn = document.getElementById('hamburgerBtn');
     const menu = document.getElementById('mobileMenu');
     if (!btn || !menu) return;
-
-    function closeMenu() {
+    function close() {
         btn.classList.remove('active');
         btn.setAttribute('aria-expanded', 'false');
         menu.classList.remove('open');
         menu.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
     }
-
     btn.addEventListener('click', () => {
         const isOpen = menu.classList.contains('open');
         if (isOpen) {
-            closeMenu();
+            close();
         } else {
             btn.classList.add('active');
             btn.setAttribute('aria-expanded', 'true');
@@ -139,544 +112,414 @@ function initHamburgerMenu() {
             document.body.style.overflow = 'hidden';
         }
     });
-
-    // Close on link click
-    document.querySelectorAll('[data-close-menu]').forEach(link => {
-        link.addEventListener('click', () => {
-            closeMenu();
-        });
-    });
-
-    // Close on backdrop click
-    menu.addEventListener('click', e => {
-        if (e.target === menu) closeMenu();
-    });
-
-    // Close on ESC
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
-    });
-}
+    document.querySelectorAll('[data-close-menu]').forEach(l => l.addEventListener('click', close));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();
 
 /* ============================================================
-   5. HERO VIDEO (VSL)
-   ============================================================ */
-function initHeroVideo() {
-    const video = document.getElementById('heroVideo');
+   HERO VIDEO (VSL)
+============================================================ */
+(function () {
+    const vid = document.getElementById('heroVideo');
     const overlay = document.getElementById('videoOverlay');
-    const playBtn = document.getElementById('playButton');
-    if (!video || !overlay || !playBtn) return;
-
-    playBtn.addEventListener('click', () => {
-        video.play();
-        overlay.style.opacity = '0';
-        overlay.style.pointerEvents = 'none';
+    const btn = document.getElementById('playButton');
+    if (!vid || !overlay || !btn) return;
+    btn.addEventListener('click', () => { vid.play(); overlay.classList.add('hidden'); });
+    vid.addEventListener('click', () => {
+        if (vid.paused) { vid.play(); overlay.classList.add('hidden'); }
+        else { vid.pause(); overlay.classList.remove('hidden'); }
     });
-
-    video.addEventListener('pause', () => {
-        overlay.style.opacity = '1';
-        overlay.style.pointerEvents = 'auto';
-    });
-
-    video.addEventListener('ended', () => {
-        overlay.style.opacity = '1';
-        overlay.style.pointerEvents = 'auto';
-    });
-}
+    vid.addEventListener('ended', () => overlay.classList.remove('hidden'));
+})();
 
 /* ============================================================
-   6. PORTFOLIO CAROUSEL (infinite auto-scroll + drag + modal)
-   ============================================================ */
-function initPortfolioCarousel() {
+   PORTFOLIO CAROUSEL (scroll infinito + drag)
+============================================================ */
+(function () {
     const wrapper = document.getElementById('carouselWrapper');
     const track = document.getElementById('carouselTrack');
     if (!wrapper || !track) return;
 
-    let autoScrollSpeed = 0.6; // px per frame
-    let isAutoScrolling = true;
-    let isDragging = false;
-    let dragStartX = 0;
-    let dragScrollLeft = 0;
-    let animFrameId;
+    const cardW = 300, gap = 24, count = 7;
+    const totalW = (cardW + gap) * count;
+    let vel = -0.8, isDrag = false, startX = 0, scrollL = 0, cur = 0, raf;
+    let dragMoved = false;
 
-    // Hover preview videos
-    const videoCards = track.querySelectorAll('.video-card');
-    videoCards.forEach(card => {
-        const vid = card.querySelector('video');
-        if (!vid) return;
-
-        card.addEventListener('mouseenter', () => {
-            if (vid.getAttribute('data-loaded') !== 'true') {
-                vid.load();
-                vid.setAttribute('data-loaded', 'true');
-            }
-            vid.play().catch(() => {});
-        });
-        card.addEventListener('mouseleave', () => {
-            vid.pause();
-            vid.currentTime = 0;
-        });
-    });
-
-    // Auto-scroll loop
-    function autoScroll() {
-        if (isAutoScrolling && !isDragging) {
-            wrapper.scrollLeft += autoScrollSpeed;
-
-            // Reset when scrolled halfway (we've duplicated content)
-            const halfWidth = track.scrollWidth / 2;
-            if (wrapper.scrollLeft >= halfWidth) {
-                wrapper.scrollLeft -= halfWidth;
-            }
+    function loop() {
+        if (!isDrag) {
+            cur += vel;
+            if (Math.abs(cur) >= totalW) cur = 0;
+            track.style.transform = `translateX(${cur}px)`;
         }
-        animFrameId = requestAnimationFrame(autoScroll);
+        raf = requestAnimationFrame(loop);
     }
+    loop();
 
-    animFrameId = requestAnimationFrame(autoScroll);
+    wrapper.addEventListener('mouseenter', () => { vel = 0; });
+    wrapper.addEventListener('mouseleave', () => { if (!isDrag) vel = -0.8; });
 
-    // Pause on hover
-    wrapper.addEventListener('mouseenter', () => { isAutoScrolling = false; });
-    wrapper.addEventListener('mouseleave', () => { isAutoScrolling = true; });
-
-    // Drag to scroll
     wrapper.addEventListener('mousedown', e => {
-        isDragging = true;
-        isAutoScrolling = false;
-        dragStartX = e.pageX - wrapper.offsetLeft;
-        dragScrollLeft = wrapper.scrollLeft;
+        isDrag = true; dragMoved = false; vel = 0;
+        startX = e.pageX; scrollL = cur;
         wrapper.style.cursor = 'grabbing';
-        wrapper.style.userSelect = 'none';
+        cancelAnimationFrame(raf);
     });
-
     wrapper.addEventListener('mousemove', e => {
-        if (!isDragging) return;
+        if (!isDrag) return;
         e.preventDefault();
-        const x = e.pageX - wrapper.offsetLeft;
-        const walk = (x - dragStartX) * 1.5;
-        wrapper.scrollLeft = dragScrollLeft - walk;
+        const walk = (e.pageX - startX) * 2;
+        if (Math.abs(walk) > 5) dragMoved = true;
+        cur = scrollL + walk;
+        track.style.transform = `translateX(${cur}px)`;
     });
-
-    function stopDrag() {
-        if (!isDragging) return;
-        isDragging = false;
-        wrapper.style.cursor = 'grab';
-        wrapper.style.userSelect = '';
-        setTimeout(() => { isAutoScrolling = true; }, 500);
-    }
-
-    wrapper.addEventListener('mouseup', stopDrag);
-    wrapper.addEventListener('mouseleave', stopDrag);
-
-    // Touch support
-    wrapper.addEventListener('touchstart', e => {
-        isDragging = true;
-        isAutoScrolling = false;
-        dragStartX = e.touches[0].pageX - wrapper.offsetLeft;
-        dragScrollLeft = wrapper.scrollLeft;
-    }, { passive: true });
-
-    wrapper.addEventListener('touchmove', e => {
-        if (!isDragging) return;
-        const x = e.touches[0].pageX - wrapper.offsetLeft;
-        const walk = (x - dragStartX) * 1.5;
-        wrapper.scrollLeft = dragScrollLeft - walk;
-    }, { passive: true });
-
-    wrapper.addEventListener('touchend', () => {
-        isDragging = false;
-        setTimeout(() => { isAutoScrolling = true; }, 500);
-    });
-}
-
-/* ============================================================
-   7. PORTFOLIO VIDEO MODAL
-   ============================================================ */
-function initPortfolioModal() {
-    const modal = document.getElementById('videoModal');
-    const closeBtn = document.getElementById('modalClose');
-    const player = document.getElementById('modalPlayer');
-    if (!modal || !closeBtn || !player) return;
-
-    document.querySelectorAll('#carouselTrack .video-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const src = card.getAttribute('data-video-src');
-            const type = card.getAttribute('data-video-type');
-            if (!src) return;
-
-            player.innerHTML = '';
-
-            if (type === 'vimeo') {
-                const iframe = document.createElement('iframe');
-                iframe.src = src + '&autoplay=1';
-                iframe.allow = 'autoplay; fullscreen; picture-in-picture';
-                iframe.setAttribute('allowfullscreen', '');
-                iframe.style.cssText = 'width:100%;height:100%;border:none;';
-                player.appendChild(iframe);
-            } else {
-                const video = document.createElement('video');
-                video.src = src;
-                video.controls = true;
-                video.autoplay = true;
-                video.style.cssText = 'width:100%;height:100%;object-fit:contain;';
-                player.appendChild(video);
-            }
-
-            modal.classList.add('open');
-            document.body.classList.add('modal-open');
-        });
-    });
-
-    function closeModal() {
-        modal.classList.remove('open');
-        document.body.classList.remove('modal-open');
-        player.innerHTML = '';
-    }
-
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', e => {
-        if (e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closeModal();
-    });
-}
-
-/* ============================================================
-   8. STICKY CTA CLOSE BUTTON
-   ============================================================ */
-function initStickyCTA() {
-    const strip = document.getElementById('ahlecCapacityStrip');
-    const closeBtn = document.getElementById('ahlecCloseBtn');
-    if (!strip || !closeBtn) return;
-
-    closeBtn.addEventListener('click', () => {
-        strip.style.transition = 'transform 0.4s ease, opacity 0.3s ease';
-        strip.style.transform = 'translateY(120%)';
-        strip.style.opacity = '0';
-        setTimeout(() => { strip.style.display = 'none'; }, 400);
-    });
-}
-
-/* ============================================================
-   9. SOLUTION ACCORDION
-   ============================================================ */
-function initAccordion() {
-    const items = document.querySelectorAll('.accordion-item');
-    if (!items.length) return;
-
-    // Open first by default
-    if (items[0]) {
-        items[0].classList.add('active');
-        const content = items[0].querySelector('.accordion-content');
-        if (content) {
-            const inner = content.querySelector('.accordion-content-inner');
-            if (inner) content.style.maxHeight = inner.scrollHeight + 'px';
-        }
-    }
-
-    items.forEach(item => {
-        const header = item.querySelector('.accordion-header');
-        const content = item.querySelector('.accordion-content');
-        if (!header || !content) return;
-
-        header.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-
-            // Close all
-            items.forEach(i => {
-                i.classList.remove('active');
-                const c = i.querySelector('.accordion-content');
-                if (c) c.style.maxHeight = '0';
-            });
-
-            // Open clicked if it wasn't active
-            if (!isActive) {
-                item.classList.add('active');
-                const inner = content.querySelector('.accordion-content-inner');
-                content.style.maxHeight = (inner ? inner.scrollHeight : 300) + 'px';
-            }
-        });
-    });
-}
-
-/* ============================================================
-   10. TIMELINE — INTERSECTION OBSERVER ANIMATIONS
-   ============================================================ */
-function initTimelineAnimations() {
-    const items = document.querySelectorAll('.timeline-item');
-    if (!items.length) return;
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.15 });
-
-    items.forEach(item => observer.observe(item));
-}
-
-/* ============================================================
-   11. GENERAL SCROLL ANIMATIONS (fade-in on scroll)
-   ============================================================ */
-function initScrollAnimations() {
-    const els = document.querySelectorAll(
-        '.problem-card, .comparison-column, .pricing-card, .about-profile, .about-text, .about-helped, .timeline-item, .framework-pillar, .cred-badge'
-    );
-    if (!els.length) return;
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    els.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(24px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-
-    // Override animate-in via class
-    const style = document.createElement('style');
-    style.textContent = `.animate-in { opacity: 1 !important; transform: translateY(0) !important; }`;
-    document.head.appendChild(style);
-}
-
-/* ============================================================
-   12. RECENT WORK CAROUSEL (auto-scroll + modal)
-   ============================================================ */
-function initRecentWorkCarousel() {
-    const wrapper = document.getElementById('recentCarouselWrapper');
-    const track = document.getElementById('recentCarouselTrack');
-    const toggleBtn = document.getElementById('toggleAutoScroll');
-    if (!wrapper || !track) return;
-
-    let isAutoScrolling = true;
-    let isDragging = false;
-    let dragStartX = 0;
-    let dragScrollLeft = 0;
-    let scrollSpeed = 0.5;
-
-    // Hover preview for video elements
-    track.querySelectorAll('.video-card video.video-thumbnail').forEach(vid => {
-        const card = vid.closest('.video-card');
-        card.addEventListener('mouseenter', () => {
-            vid.play().catch(() => {});
-        });
-        card.addEventListener('mouseleave', () => {
-            vid.pause();
-        });
-    });
-
-    function autoScrollLoop() {
-        if (isAutoScrolling && !isDragging) {
-            wrapper.scrollLeft += scrollSpeed;
-            const halfWidth = track.scrollWidth / 2;
-            if (wrapper.scrollLeft >= halfWidth) {
-                wrapper.scrollLeft -= halfWidth;
-            }
-        }
-        requestAnimationFrame(autoScrollLoop);
-    }
-
-    requestAnimationFrame(autoScrollLoop);
-
-    wrapper.addEventListener('mouseenter', () => { isAutoScrolling = false; });
-    wrapper.addEventListener('mouseleave', () => { isAutoScrolling = true; });
-
-    // Drag
-    wrapper.addEventListener('mousedown', e => {
-        isDragging = true;
-        isAutoScrolling = false;
-        dragStartX = e.pageX - wrapper.offsetLeft;
-        dragScrollLeft = wrapper.scrollLeft;
-        wrapper.style.cursor = 'grabbing';
-    });
-
-    wrapper.addEventListener('mousemove', e => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.pageX - wrapper.offsetLeft;
-        const walk = (x - dragStartX) * 1.2;
-        wrapper.scrollLeft = dragScrollLeft - walk;
-    });
-
     function endDrag() {
-        if (!isDragging) return;
-        isDragging = false;
-        wrapper.style.cursor = '';
-        setTimeout(() => { isAutoScrolling = true; }, 600);
+        isDrag = false;
+        wrapper.style.cursor = 'grab';
+        vel = -0.8;
+        loop();
     }
-
     wrapper.addEventListener('mouseup', endDrag);
     wrapper.addEventListener('mouseleave', endDrag);
 
     // Touch
     wrapper.addEventListener('touchstart', e => {
-        isDragging = true;
-        isAutoScrolling = false;
-        dragStartX = e.touches[0].pageX - wrapper.offsetLeft;
-        dragScrollLeft = wrapper.scrollLeft;
+        isDrag = true; dragMoved = false; vel = 0;
+        startX = e.touches[0].pageX; scrollL = cur;
+        cancelAnimationFrame(raf);
     }, { passive: true });
-
     wrapper.addEventListener('touchmove', e => {
-        if (!isDragging) return;
-        const x = e.touches[0].pageX - wrapper.offsetLeft;
-        wrapper.scrollLeft = dragScrollLeft - (x - dragStartX) * 1.2;
+        if (!isDrag) return;
+        const walk = (e.touches[0].pageX - startX) * 2;
+        if (Math.abs(walk) > 5) dragMoved = true;
+        cur = scrollL + walk;
+        track.style.transform = `translateX(${cur}px)`;
     }, { passive: true });
+    wrapper.addEventListener('touchend', () => { isDrag = false; vel = -0.8; loop(); });
 
-    wrapper.addEventListener('touchend', () => {
-        isDragging = false;
-        setTimeout(() => { isAutoScrolling = true; }, 600);
+    // Hover preview videos
+    track.querySelectorAll('.video-card').forEach(card => {
+        const v = card.querySelector('video');
+        const iframe = card.querySelector('iframe');
+        if (v) {
+            card.addEventListener('mouseenter', () => { v.load(); v.play().catch(() => {}); });
+            card.addEventListener('mouseleave', () => { v.pause(); v.currentTime = 0; });
+        }
+        if (iframe && !v) {
+            card.addEventListener('mouseenter', () => {
+                if (!iframe.src && iframe.dataset.src) {
+                    iframe.src = iframe.dataset.src;
+                    setTimeout(() => iframe.classList.add('loaded'), 500);
+                }
+            });
+        }
     });
 
-    // Toggle button
+    // Expor dragMoved para o modal
+    wrapper._isDragMoved = () => dragMoved;
+})();
+
+/* ============================================================
+   PORTFOLIO MODAL
+============================================================ */
+(function () {
+    const modal = document.getElementById('videoModal');
+    const closeBtn = document.getElementById('modalClose');
+    const player = document.getElementById('modalPlayer');
+    if (!modal || !closeBtn || !player) return;
+    const wrapper = document.getElementById('carouselWrapper');
+
+    document.querySelectorAll('#carouselTrack .video-card').forEach(card => {
+        card.addEventListener('click', () => {
+            if (wrapper && wrapper._isDragMoved && wrapper._isDragMoved()) return;
+            const src = card.getAttribute('data-video-src');
+            const type = card.getAttribute('data-video-type');
+            if (!src) return;
+            player.innerHTML = '';
+            if (type === 'vimeo') {
+                const f = document.createElement('iframe');
+                f.src = src + '&autoplay=1';
+                f.allow = 'autoplay; fullscreen; picture-in-picture';
+                f.setAttribute('allowfullscreen', '');
+                f.style.cssText = 'width:100%;height:100%;border:none;';
+                player.appendChild(f);
+            } else {
+                const v = document.createElement('video');
+                v.src = src; v.controls = true; v.autoplay = true;
+                v.style.cssText = 'width:100%;height:100%;object-fit:contain;';
+                player.appendChild(v);
+            }
+            modal.classList.add('active');
+            document.body.classList.add('modal-open');
+        });
+    });
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+        player.innerHTML = '';
+    }
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+})();
+
+/* ============================================================
+   STICKY CTA — FECHAR
+============================================================ */
+(function () {
+    const strip = document.getElementById('ahlecCapacityStrip');
+    const btn = document.getElementById('ahlecCloseBtn');
+    if (!strip || !btn) return;
+    btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        strip.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+        strip.style.opacity = '0';
+        strip.style.transform = 'translateX(-50%) translateY(20px)';
+        setTimeout(() => { strip.style.display = 'none'; }, 350);
+    }, true);
+})();
+
+/* ============================================================
+   ACCORDION (Solução)
+============================================================ */
+(function () {
+    const items = document.querySelectorAll('.accordion-item');
+    if (!items.length) return;
+
+    // Abrir o primeiro por defeito
+    function openItem(item) {
+        item.classList.add('active');
+        const content = item.querySelector('.accordion-content');
+        const inner = content && content.querySelector('.accordion-content-inner');
+        if (content) content.style.maxHeight = (inner ? inner.scrollHeight : 300) + 'px';
+    }
+    function closeItem(item) {
+        item.classList.remove('active');
+        const content = item.querySelector('.accordion-content');
+        if (content) content.style.maxHeight = '0';
+    }
+
+    // Fechar todos exceto o primeiro
+    items.forEach((item, i) => {
+        const content = item.querySelector('.accordion-content');
+        if (content) content.style.maxHeight = i === 0 ? (content.querySelector('.accordion-content-inner')?.scrollHeight || 300) + 'px' : '0';
+    });
+
+    items.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        if (!header) return;
+        header.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            items.forEach(closeItem);
+            if (!isActive) openItem(item);
+        });
+    });
+})();
+
+/* ============================================================
+   TIMELINE — Intersection Observer
+============================================================ */
+(function () {
+    const items = document.querySelectorAll('.timeline-item');
+    if (!items.length) return;
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    items.forEach(i => obs.observe(i));
+})();
+
+/* ============================================================
+   SCROLL FADE-IN (problem cards, pricing, etc.)
+============================================================ */
+(function () {
+    const els = document.querySelectorAll('.problem-card, .comparison-column, .pricing-card, .about-container, .cred-badge, .framework-pillar');
+    if (!els.length) return;
+    const style = document.createElement('style');
+    style.textContent = '.fade-ready{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}.fade-in{opacity:1!important;transform:translateY(0)!important}';
+    document.head.appendChild(style);
+    els.forEach(el => el.classList.add('fade-ready'));
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('fade-in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    els.forEach(el => obs.observe(el));
+})();
+
+/* ============================================================
+   RECENT WORK CAROUSEL
+============================================================ */
+(function () {
+    const wrapper = document.getElementById('recentCarouselWrapper');
+    const track = document.getElementById('recentCarouselTrack');
+    const toggleBtn = document.getElementById('toggleAutoScroll');
+    if (!wrapper || !track) return;
+
+    let vel = -1.2, isDrag = false, startX = 0, scrollL = 0, cur = 0, raf;
+    let dragMoved = false, autoEnabled = true;
+
+    const colW = 528; // 340+48 ou 480+48 approx
+    const totalW = colW * 5;
+
+    function loop() {
+        if (!isDrag && autoEnabled) {
+            cur += vel;
+            if (Math.abs(cur) >= totalW) cur = 0;
+            track.style.transform = `translateX(${cur}px)`;
+        }
+        raf = requestAnimationFrame(loop);
+    }
+    loop();
+
+    wrapper.addEventListener('mouseenter', () => { vel = 0; });
+    wrapper.addEventListener('mouseleave', () => { if (!isDrag && autoEnabled) vel = -1.2; });
+
+    wrapper.addEventListener('mousedown', e => {
+        isDrag = true; dragMoved = false; vel = 0;
+        startX = e.pageX; scrollL = cur;
+        wrapper.style.cursor = 'grabbing';
+        cancelAnimationFrame(raf);
+    });
+    wrapper.addEventListener('mousemove', e => {
+        if (!isDrag) return;
+        e.preventDefault();
+        const walk = (e.pageX - startX) * 2;
+        if (Math.abs(walk) > 5) dragMoved = true;
+        cur = scrollL + walk;
+        track.style.transform = `translateX(${cur}px)`;
+    });
+    function endDrag() {
+        if (!isDrag) return;
+        isDrag = false;
+        wrapper.style.cursor = 'grab';
+        if (autoEnabled) vel = -1.2;
+        loop();
+    }
+    wrapper.addEventListener('mouseup', endDrag);
+    wrapper.addEventListener('mouseleave', endDrag);
+
+    wrapper.addEventListener('touchstart', e => {
+        isDrag = true; dragMoved = false; vel = 0;
+        startX = e.touches[0].pageX; scrollL = cur;
+        cancelAnimationFrame(raf);
+    }, { passive: true });
+    wrapper.addEventListener('touchmove', e => {
+        if (!isDrag) return;
+        const walk = (e.touches[0].pageX - startX) * 2;
+        if (Math.abs(walk) > 5) dragMoved = true;
+        cur = scrollL + walk;
+        track.style.transform = `translateX(${cur}px)`;
+    }, { passive: true });
+    wrapper.addEventListener('touchend', () => { isDrag = false; if (autoEnabled) vel = -1.2; loop(); });
+
+    // Hover preview
+    track.querySelectorAll('.video-card video.video-thumbnail').forEach(v => {
+        const card = v.closest('.video-card');
+        card.addEventListener('mouseenter', () => { if (v.readyState === 0) v.load(); v.play().catch(() => {}); });
+        card.addEventListener('mouseleave', () => { v.pause(); });
+    });
+
+    // Toggle btn
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
-            isAutoScrolling = !isAutoScrolling;
+            autoEnabled = !autoEnabled;
             const span = toggleBtn.querySelector('span');
             const svg = toggleBtn.querySelector('svg');
-            if (isAutoScrolling) {
-                if (span) span.textContent = 'Pausar Auto-Scroll';
+            if (autoEnabled) {
+                vel = -1.2;
                 if (svg) svg.innerHTML = '<path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>';
+                if (span) span.textContent = 'Pausar Auto-Scroll';
             } else {
-                if (span) span.textContent = 'Retomar Auto-Scroll';
+                vel = 0;
                 if (svg) svg.innerHTML = '<path d="M8 5v14l11-7z"/>';
+                if (span) span.textContent = 'Retomar Auto-Scroll';
             }
         });
     }
-}
+
+    // Expor dragMoved
+    wrapper._isDragMoved = () => dragMoved;
+})();
 
 /* ============================================================
-   13. RECENT WORK MODAL
-   ============================================================ */
-function initRecentWorkModal() {
+   RECENT WORK MODAL
+============================================================ */
+(function () {
     const modal = document.getElementById('recentModal');
     const closeBtn = document.getElementById('recentModalClose');
+    const content = document.getElementById('recentModalContent');
     const iframe = document.getElementById('recentModalIframe');
     const videoEl = document.getElementById('recentModalVideo');
-    const categoryEl = document.getElementById('recentModalCategory');
+    const catEl = document.getElementById('recentModalCategory');
     const titleEl = document.getElementById('recentModalTitle');
     const descEl = document.getElementById('recentModalDescription');
     if (!modal || !closeBtn) return;
 
+    let scrollPos = 0;
+    const wrapper = document.getElementById('recentCarouselWrapper');
+
     document.querySelectorAll('#recentCarouselTrack .video-card').forEach(card => {
         card.addEventListener('click', () => {
-            const type = card.getAttribute('data-type');
-            const videoSrc = card.getAttribute('data-video');
-            const category = card.getAttribute('data-category') || '';
-            const title = card.getAttribute('data-title') || '';
-            const desc = card.getAttribute('data-description') || '';
+            if (wrapper && wrapper._isDragMoved && wrapper._isDragMoved()) return;
+            const type = card.dataset.type;
+            const src  = card.dataset.video;
+            const aspect = card.dataset.aspect;
 
-            if (categoryEl) categoryEl.textContent = category;
-            if (titleEl) titleEl.textContent = title;
-            if (descEl) descEl.textContent = desc;
+            if (catEl)   catEl.textContent  = card.dataset.category || '';
+            if (titleEl) titleEl.textContent = card.dataset.title    || '';
+            if (descEl)  descEl.textContent  = card.dataset.description || '';
+
+            content.classList.remove('landscape', 'portrait');
+            content.classList.add(aspect || 'landscape');
 
             // Reset
-            if (iframe) { iframe.src = ''; iframe.style.display = 'none'; }
-            if (videoEl) { videoEl.src = ''; videoEl.style.display = 'none'; }
+            if (iframe)  { iframe.src = ''; iframe.style.display = 'none'; }
+            if (videoEl) { videoEl.pause(); videoEl.style.display = 'none'; }
 
             if (type === 'youtube') {
                 if (iframe) {
-                    iframe.src = videoSrc + '?autoplay=1&rel=0';
+                    iframe.src = src + '?autoplay=1&rel=0&modestbranding=1';
                     iframe.style.display = 'block';
                 }
-            } else if (type === 'direct') {
+            } else {
                 if (videoEl) {
                     const source = videoEl.querySelector('source');
-                    if (source) source.src = videoSrc;
+                    if (source) source.src = src;
                     videoEl.load();
                     videoEl.style.display = 'block';
                     videoEl.play().catch(() => {});
                 }
             }
 
-            modal.classList.add('open');
+            scrollPos = window.pageYOffset;
+            document.body.style.top = `-${scrollPos}px`;
             document.body.classList.add('modal-open');
+            modal.classList.add('active');
         });
     });
 
     function closeModal() {
-        modal.classList.remove('open');
+        modal.classList.remove('active');
         document.body.classList.remove('modal-open');
-        if (iframe) { iframe.src = ''; iframe.style.display = 'none'; }
+        document.body.style.top = '';
+        window.scrollTo(0, scrollPos);
+        if (iframe)  { iframe.src = ''; iframe.style.display = 'none'; }
         if (videoEl) { videoEl.pause(); videoEl.style.display = 'none'; }
     }
 
     closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', e => {
-        if (e.target === modal) closeModal();
-    });
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    modal.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
     document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closeModal();
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
     });
-}
+})();
 
 /* ============================================================
-   14. HEADER NAV ACTIVE LINK (highlight current section)
-   ============================================================ */
-function initHeaderActiveLinks() {
-    const navLinks = document.querySelectorAll('.header-nav-link');
-    if (!navLinks.length) return;
-
-    const sectionMap = {
-        '#portfolio': 'portfolio',
-        '#metodologia': 'metodologia',
-        '#precos': 'precos',
-        '#sobre': 'sobre',
-        '#chamada': 'chamada'
-    };
-
-    const sections = Object.values(sectionMap)
-        .map(id => document.getElementById(id))
-        .filter(Boolean);
-
-    function updateActiveLink() {
-        const scrollY = window.scrollY + window.innerHeight * 0.4;
-        let activeId = null;
-
-        sections.forEach(sec => {
-            if (scrollY >= sec.offsetTop) activeId = sec.id;
-        });
-
-        navLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            const secId = href ? href.replace('#', '') : '';
-            link.classList.toggle('active', secId === activeId);
-        });
-    }
-
-    window.addEventListener('scroll', updateActiveLink, { passive: true });
-    updateActiveLink();
-}
-
-/* ============================================================
-   15. HERO SECTION ENTRANCE ANIMATION
-   ============================================================ */
-function initHeroEntrance() {
-    const heroContent = document.querySelector('.hero-content');
-    const heroVideo = document.querySelector('.hero-video-container');
-    if (!heroContent) return;
-
-    // Elements already have CSS animations via keyframes
-    // Just ensure they start visible after load
-    setTimeout(() => {
-        if (heroContent) heroContent.style.opacity = '1';
-        if (heroVideo) heroVideo.style.opacity = '1';
-    }, 100);
-}
-
-/* ============================================================
-   16. SMOOTH SCROLL FOR ALL ANCHOR LINKS
-   ============================================================ */
-function initSmoothScroll() {
+   SMOOTH SCROLL para links âncora
+============================================================ */
+(function () {
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', e => {
             const href = link.getAttribute('href');
@@ -684,85 +527,8 @@ function initSmoothScroll() {
             const target = document.querySelector(href);
             if (!target) return;
             e.preventDefault();
-            const headerH = document.getElementById('site-header')?.offsetHeight || 70;
-            const targetY = target.getBoundingClientRect().top + window.scrollY - headerH;
-            window.scrollTo({ top: targetY, behavior: 'smooth' });
+            const headerH = (document.getElementById('site-header') || {}).offsetHeight || 70;
+            window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - headerH, behavior: 'smooth' });
         });
     });
-}
-
-/* ============================================================
-   17. LAZY LOAD IMAGES
-   ============================================================ */
-function initLazyLoad() {
-    if (!('IntersectionObserver' in window)) return;
-
-    const lazyImgs = document.querySelectorAll('img[loading="lazy"]');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                if (img.dataset.src) img.src = img.dataset.src;
-                observer.unobserve(img);
-            }
-        });
-    }, { rootMargin: '200px' });
-
-    lazyImgs.forEach(img => observer.observe(img));
-}
-
-/* ============================================================
-   18. SOLUTION SECTION — STICKY RIGHT PANEL
-   ============================================================ */
-function initSolutionSticky() {
-    // Handled by CSS position: sticky; complemented here with scroll awareness
-    const right = document.querySelector('.solution-right');
-    if (!right) return;
-    // CSS handles the sticky behavior; nothing extra needed in JS
-}
-
-/* ============================================================
-   19. PRICING CARDS — HOVER TILT EFFECT (Elite card only)
-   ============================================================ */
-function initPricingTilt() {
-    const featured = document.querySelector('.pricing-card.featured');
-    if (!featured) return;
-
-    featured.addEventListener('mousemove', e => {
-        const rect = featured.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        const tiltX = (y / rect.height) * 6;
-        const tiltY = -(x / rect.width) * 6;
-        featured.style.transform = `scale(1.05) perspective(600px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-    });
-
-    featured.addEventListener('mouseleave', () => {
-        featured.style.transform = 'scale(1.05)';
-    });
-}
-
-/* ============================================================
-   20. INIT ALL
-   ============================================================ */
-document.addEventListener('DOMContentLoaded', () => {
-    initScrollProgressBar();
-    initSectionIndicator();
-    initStickyHeader();
-    initHamburgerMenu();
-    initHeroVideo();
-    initPortfolioCarousel();
-    initPortfolioModal();
-    initStickyCTA();
-    initAccordion();
-    initTimelineAnimations();
-    initScrollAnimations();
-    initRecentWorkCarousel();
-    initRecentWorkModal();
-    initHeaderActiveLinks();
-    initHeroEntrance();
-    initSmoothScroll();
-    initLazyLoad();
-    initSolutionSticky();
-    initPricingTilt();
-});
+})();

@@ -12,1471 +12,766 @@
 </head>
 <body>
 
-    <!-- ============================================================
-         SCROLL PROGRESS BAR
-    ============================================================ -->
-    <div id="scroll-progress-bar"></div>
+<!-- Scroll Progress Bar -->
+<div id="scroll-progress-bar"></div>
 
-    <!-- ============================================================
-         SECTION INDICATOR DOTS (right side)
-    ============================================================ -->
-    <nav id="section-indicator" aria-label="Navegação de secções">
-        <a class="section-dot" data-section="hero" href="#hero" title="Início"></a>
-        <a class="section-dot" data-section="portfolio" href="#portfolio" title="Portfólio"></a>
-        <a class="section-dot" data-section="problema" href="#problema" title="O Problema"></a>
-        <a class="section-dot" data-section="solucao" href="#solucao" title="A Solução"></a>
-        <a class="section-dot" data-section="metodologia" href="#metodologia" title="Metodologia"></a>
-        <a class="section-dot" data-section="diferenciacao" href="#diferenciacao" title="Diferenciação"></a>
-        <a class="section-dot" data-section="precos" href="#precos" title="Preços"></a>
-        <a class="section-dot" data-section="chamada" href="#chamada" title="Chamada Gratuita"></a>
-        <a class="section-dot" data-section="sobre" href="#sobre" title="Sobre Mim"></a>
-        <a class="section-dot" data-section="trabalhos-recentes" href="#trabalhos-recentes" title="Trabalhos Recentes"></a>
-    </nav>
+<!-- Section Indicator Dots -->
+<nav id="section-indicator">
+    <a class="section-dot" data-section="hero"             href="#hero"             title="Início"></a>
+    <a class="section-dot" data-section="portfolio"        href="#portfolio"        title="Portfólio"></a>
+    <a class="section-dot" data-section="problema"         href="#problema"         title="O Problema"></a>
+    <a class="section-dot" data-section="solucao"          href="#solucao"          title="A Solução"></a>
+    <a class="section-dot" data-section="metodologia"      href="#metodologia"      title="Metodologia"></a>
+    <a class="section-dot" data-section="diferenciacao"    href="#diferenciacao"    title="Diferenciação"></a>
+    <a class="section-dot" data-section="precos"           href="#precos"           title="Preços"></a>
+    <a class="section-dot" data-section="chamada"          href="#chamada"          title="Chamada Gratuita"></a>
+    <a class="section-dot" data-section="sobre"            href="#sobre"            title="Sobre Mim"></a>
+    <a class="section-dot" data-section="trabalhos-recentes" href="#trabalhos-recentes" title="Trabalhos Recentes"></a>
+</nav>
 
-    <!-- ============================================================
-         SCROLL SECTION POPUP (mini label)
-    ============================================================ -->
-    <div id="section-popup">
-        <span id="section-popup-text">Início</span>
+<!-- Section Popup Label -->
+<div id="section-popup"><span id="section-popup-text">Início</span></div>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header id="site-header">
+    <div class="header-container">
+        <a href="#hero" class="header-logo">Ahlec <span class="header-logo-highlight">Laia</span></a>
+        <nav class="header-nav">
+            <a href="#portfolio"     class="header-nav-link">Portfólio</a>
+            <a href="#metodologia"   class="header-nav-link">Metodologia</a>
+            <a href="#precos"        class="header-nav-link">Preços</a>
+            <a href="#sobre"         class="header-nav-link">Sobre Mim</a>
+            <a href="#chamada"       class="header-nav-cta">Chamada Gratuita</a>
+        </nav>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
     </div>
-
-    <!-- ============================================================
-         HEADER / NAVIGATION
-    ============================================================ -->
-    <header class="site-header" id="site-header">
-        <div class="header-container">
-            <a href="#hero" class="header-logo">
-                Ahlec <span class="header-logo-highlight">Laia</span>
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="header-nav" aria-label="Navegação principal">
-                <a href="#portfolio" class="header-nav-link">Portfólio</a>
-                <a href="#metodologia" class="header-nav-link">Metodologia</a>
-                <a href="#precos" class="header-nav-link">Preços</a>
-                <a href="#sobre" class="header-nav-link">Sobre Mim</a>
-                <a href="#chamada" class="header-nav-cta">Chamada Gratuita</a>
-            </nav>
-
-            <!-- Hamburger -->
-            <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-            <nav class="mobile-nav">
-                <a href="#hero" class="mobile-nav-link" data-close-menu>Início</a>
-                <a href="#portfolio" class="mobile-nav-link" data-close-menu>Portfólio</a>
-                <a href="#problema" class="mobile-nav-link" data-close-menu>O Problema</a>
-                <a href="#solucao" class="mobile-nav-link" data-close-menu>A Solução</a>
-                <a href="#metodologia" class="mobile-nav-link" data-close-menu>Metodologia</a>
-                <a href="#diferenciacao" class="mobile-nav-link" data-close-menu>Diferenciação</a>
-                <a href="#precos" class="mobile-nav-link" data-close-menu>Preços</a>
-                <a href="#chamada" class="mobile-nav-link" data-close-menu>Chamada Gratuita</a>
-                <a href="#sobre" class="mobile-nav-link" data-close-menu>Sobre Mim</a>
-                <a href="#trabalhos-recentes" class="mobile-nav-link" data-close-menu>Trabalhos Recentes</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- ============================================================
-         1. HERO SECTION
-    ============================================================ -->
-    <section class="hero-section" id="hero">
-        <!-- Motion Lines Background -->
-        <div class="motion-lines">
-            <div class="motion-line"></div>
-            <div class="motion-line"></div>
-            <div class="motion-line"></div>
-            <div class="motion-line"></div>
-        </div>
-
-        <!-- Floating Dots -->
-        <div class="floating-dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-
-        <!-- Radial Glow Pulses -->
-        <div class="glow-pulse"></div>
-        <div class="glow-pulse"></div>
-
-        <!-- Main Hero Container -->
-        <div class="hero-container">
-
-            <!-- Left Side: VSL Video -->
-            <div class="hero-video-container">
-                <div class="video-wrapper">
-                    <video
-                        id="heroVideo"
-                        class="hero-video"
-                        poster="https://via.placeholder.com/1920x1080/080808/FFFFFF?text=Video+Thumbnail"
-                        preload="metadata"
-                    >
-                        <source src="your-video-url.mp4" type="video/mp4">
-                        O teu navegador não suporta vídeo HTML5.
-                    </video>
-
-                    <!-- Video Overlay with Play Button -->
-                    <div class="video-overlay" id="videoOverlay">
-                        <div class="play-button" id="playButton">
-                            <div class="play-icon"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Video Description -->
-                <div class="video-description">
-                    <p class="video-description-text">
-                        <strong>Vê este vídeo</strong> para entender como funciona o meu processo de trabalho e se faz sentido conversarmos.
-                    </p>
-                </div>
-
-                <!-- CTA Section Below VSL -->
-                <div class="video-cta-section">
-                    <a href="https://wa.me/351965373520?text=Ol%C3%A1%20Ahlec%2C%20acabei%20de%20ver%20o%20teu%20site%20e%20gostava%20de%20marcar%20uma%20chamada%20contigo%20para%20ver%20se%20faz%20sentido%20trabalhar-mos%20juntos.%20O%20meu%20neg%C3%B3cio%20j%C3%A1%20fatura%20e%20procuro%20um%20editor%20especializado%20em%20narrativas%20que%20convertem." target="_blank" rel="noopener noreferrer" class="video-cta-button">
-                        <span>Agendar Chamada Estratégica</span>
-                        <span class="cta-arrow"></span>
-                    </a>
-                    <p class="video-micro-copy">
-                        Contacta via WhatsApp para marcarmos uma chamada<br>e avaliarmos o alinhamento entre ambos
-                    </p>
-                </div>
-
-                <!-- Credibility Section Below CTA -->
-                <div class="video-credibility-wrapper">
-                    <div class="credibility-intro">Parceiros Comerciais</div>
-
-                    <div class="video-credibility">
-                        <!-- Badge 1: Elite Agency -->
-                        <div class="cred-badge">
-                            <div class="cred-header">
-                                <div>
-                                    <div class="cred-label">Parceiro Direto</div>
-                                    <div class="cred-title">Elite Agency</div>
-                                </div>
-                                <div class="cred-price">€1.250</div>
-                            </div>
-                            <div class="cred-description">
-                                Todo o conteúdo de vídeo da agência. Marketing de alto nível para negócios locais premium.
-                            </div>
-                            <div class="cred-footer">
-                                <div class="cred-type">Serviço Completo</div>
-                                <div class="cred-result">
-                                    Faturação: <span class="cred-result-number">6 Dígitos/Ano</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Badge 2: Orgheal x João Alfar -->
-                        <div class="cred-badge">
-                            <div class="cred-header">
-                                <div>
-                                    <div class="cred-label">E-commerce Premium</div>
-                                    <div class="cred-title">Orgheal x João Alfar</div>
-                                </div>
-                                <div class="cred-price">€10k</div>
-                            </div>
-                            <div class="cred-description">
-                                Mini-VSLs e vídeos de produto (confidenciais). Edição para funis de marca de e-commerce de 8 dígitos.
-                            </div>
-                            <div class="cred-footer">
-                                <div class="cred-type">Ads + VSL's + Mini VSL's</div>
-                                <div class="cred-result">
-                                    Resultado: <span class="cred-result-number">50k/mês</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Side: Copy -->
-            <div class="hero-content">
-                <!-- Profile Section -->
-                <div class="profile-section">
-                    <div class="profile-avatar">
-                        <img src="https://res.cloudinary.com/dooigd0d3/image/upload/v1769610431/New_Perfil_4_wenty9.png" alt="Ahlec Laia">
-                    </div>
-                    <div class="profile-info">
-                        <div class="profile-name">Ahlec Laia</div>
-                        <div class="profile-specialization">Editor de Vídeo Especializado</div>
-                    </div>
-                </div>
-
-                <h1 class="hero-headline">
-                    Cada Segundo Conta.<br>
-                    <span class="highlight">Cada Frame Converte.</span>
-                </h1>
-
-                <p class="hero-subheadline">
-                    Se o teu negócio já fatura, tenho a infraestrutura de edição que precisas. Não edito "vídeos bonitos" — <strong>construo narrativas que vendem</strong>. Transformo criadores em máquinas de conversão. Candidata-te apenas se estiveres pronto para escalar.
-                </p>
-
-                <ul class="hero-benefits">
-                    <li>Edição focada em retenção e conversão real</li>
-                    <li>Parceiro de negócios que geram 6-7 dígitos/ano</li>
-                    <li>Entregas rápidas com fluxo semanal consistente</li>
-                </ul>
-
-                <!-- Exclusivity Notice -->
-                <div class="exclusivity-notice">
-                    <div class="exclusivity-title">Qualidade Acima de Tudo</div>
-                    <div class="exclusivity-text">
-                        Mantenho um máximo de <strong>5 clientes ativos</strong> para garantir que cada vídeo recebe dias (não horas) de atenção. Para que eu entregue ao mais alto nível, preciso de foco total em cada projeto.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
-            Scroll
-            <div class="scroll-line"></div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-         2. PORTFOLIO SECTION
-    ============================================================ -->
-    <section class="portfolio-section" id="portfolio">
-        <div class="portfolio-container">
-
-            <!-- Header -->
-            <div class="portfolio-header">
-                <div class="portfolio-label">Portfólio</div>
-
-                <h2 class="portfolio-title">
-                    Vídeos que <span class="highlight">Convertem</span>
-                </h2>
-
-                <p class="portfolio-subtitle">
-                    Cada frame é uma decisão estratégica — ritmo, retenção e conversão ao serviço do teu negócio.
-                </p>
-            </div>
-
-            <!-- Carrossel Infinito -->
-            <div class="carousel-wrapper" id="carouselWrapper">
-                <div class="carousel-track" id="carouselTrack">
-
-                    <!-- Video 1 -->
-                    <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224061/Imobili%C3%A1rio_e_CAEPs_-_Ahlec_Laia_1080p_h264_inmnf2.mp4" data-video-type="direct">
-                        <div class="video-thumbnail">
-                            <video preload="none" muted loop playsinline data-loaded="false">
-                                <source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224061/Imobili%C3%A1rio_e_CAEPs_-_Ahlec_Laia_1080p_h264_inmnf2.mp4#t=0.1" type="video/mp4">
-                            </video>
-                            <div class="video-overlay">
-                                <div class="play-icon">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Video 2 -->
-                    <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224066/Como_se_define_o_pre%C3%A7o_duma_A%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_p4xrro.mp4" data-video-type="direct">
-                        <div class="video-thumbnail">
-                            <video preload="none" muted loop playsinline data-loaded="false">
-                                <source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224066/Como_se_define_o_pre%C3%A7o_duma_A%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_p4xrro.mp4#t=0.1" type="video/mp4">
-                            </video>
-                            <div class="video-overlay">
-                                <div class="play-icon">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Video 3 -->
-                    <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224067/Reforma_te_com_Bitcoin_-_Ahlec_Laia_1080p_h264_f7dmam.mp4" data-video-type="direct">
-                        <div class="video-thumbnail">
-                            <video preload="none" muted loop playsinline data-loaded="false">
-                                <source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224067/Reforma_te_com_Bitcoin_-_Ahlec_Laia_1080p_h264_f7dmam.mp4#t=0.1" type="video/mp4">
-                            </video>
-                            <div class="video-overlay">
-                                <div class="play-icon">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Video 4 -->
-                    <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224075/Agente_Imobili%C3%A1rio_-_Ahlec_Laia_1080p_h264_rxxnwu.mp4" data-video-type="direct">
-                        <div class="video-thumbnail">
-                            <video preload="none" muted loop playsinline data-loaded="false">
-                                <source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224075/Agente_Imobili%C3%A1rio_-_Ahlec_Laia_1080p_h264_rxxnwu.mp4#t=0.1" type="video/mp4">
-                            </video>
-                            <div class="video-overlay">
-                                <div class="play-icon">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Video 5 -->
-                    <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224233/O_Radar_Financeiro_-_Ahlec_Laia_1080p_h264_edx2px.mp4" data-video-type="direct">
-                        <div class="video-thumbnail">
-                            <video preload="none" muted loop playsinline data-loaded="false">
-                                <source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224233/O_Radar_Financeiro_-_Ahlec_Laia_1080p_h264_edx2px.mp4#t=0.1" type="video/mp4">
-                            </video>
-                            <div class="video-overlay">
-                                <div class="play-icon">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Video 6 -->
-                    <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224238/Curso_de_Finan%C3%A7as_-_Ahlec_Laia_1080p_h264_dzgi6e.mp4" data-video-type="direct">
-                        <div class="video-thumbnail">
-                            <video preload="none" muted loop playsinline data-loaded="false">
-                                <source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224238/Curso_de_Finan%C3%A7as_-_Ahlec_Laia_1080p_h264_dzgi6e.mp4#t=0.1" type="video/mp4">
-                            </video>
-                            <div class="video-overlay">
-                                <div class="play-icon">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Video 7 - VIMEO -->
-                    <div class="video-card" data-video-src="https://player.vimeo.com/video/1163810483?h=09fb6c32ce" data-video-type="vimeo">
-                        <div class="video-thumbnail">
-                            <iframe
-                                data-src="https://player.vimeo.com/video/1163810483?h=09fb6c32ce&background=1&muted=1&loop=1&autopause=0"
-                                frameborder="0"
-                                allow="autoplay; fullscreen; picture-in-picture"
-                                data-loaded="false">
-                            </iframe>
-                            <img src="https://res.cloudinary.com/dooigd0d3/image/upload/v1770816522/brave_screenshot_framer.com_2_jug9cy.png" alt="Vimeo Video" class="vimeo-thumb">
-                            <div class="video-overlay">
-                                <div class="play-icon">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- DUPLICATES FOR INFINITE SCROLL -->
-                    <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224061/Imobili%C3%A1rio_e_CAEPs_-_Ahlec_Laia_1080p_h264_inmnf2.mp4" data-video-type="direct">
-                        <div class="video-thumbnail">
-                            <video preload="none" muted loop playsinline data-loaded="false">
-                                <source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224061/Imobili%C3%A1rio_e_CAEPs_-_Ahlec_Laia_1080p_h264_inmnf2.mp4#t=0.1" type="video/mp4">
-                            </video>
-                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div></div>
-                        </div>
-                    </div>
-                    <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224066/Como_se_define_o_pre%C3%A7o_duma_A%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_p4xrro.mp4" data-video-type="direct">
-                        <div class="video-thumbnail">
-                            <video preload="none" muted loop playsinline data-loaded="false">
-                                <source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224066/Como_se_define_o_pre%C3%A7o_duma_A%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_p4xrro.mp4#t=0.1" type="video/mp4">
-                            </video>
-                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div></div>
-                        </div>
-                    </div>
-                    <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224067/Reforma_te_com_Bitcoin_-_Ahlec_Laia_1080p_h264_f7dmam.mp4" data-video-type="direct">
-                        <div class="video-thumbnail">
-                            <video preload="none" muted loop playsinline data-loaded="false">
-                                <source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224067/Reforma_te_com_Bitcoin_-_Ahlec_Laia_1080p_h264_f7dmam.mp4#t=0.1" type="video/mp4">
-                            </video>
-                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div></div>
-                        </div>
-                    </div>
-                    <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224075/Agente_Imobili%C3%A1rio_-_Ahlec_Laia_1080p_h264_rxxnwu.mp4" data-video-type="direct">
-                        <div class="video-thumbnail">
-                            <video preload="none" muted loop playsinline data-loaded="false">
-                                <source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224075/Agente_Imobili%C3%A1rio_-_Ahlec_Laia_1080p_h264_rxxnwu.mp4#t=0.1" type="video/mp4">
-                            </video>
-                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div></div>
-                        </div>
-                    </div>
-                    <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224233/O_Radar_Financeiro_-_Ahlec_Laia_1080p_h264_edx2px.mp4" data-video-type="direct">
-                        <div class="video-thumbnail">
-                            <video preload="none" muted loop playsinline data-loaded="false">
-                                <source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224233/O_Radar_Financeiro_-_Ahlec_Laia_1080p_h264_edx2px.mp4#t=0.1" type="video/mp4">
-                            </video>
-                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div></div>
-                        </div>
-                    </div>
-                    <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224238/Curso_de_Finan%C3%A7as_-_Ahlec_Laia_1080p_h264_dzgi6e.mp4" data-video-type="direct">
-                        <div class="video-thumbnail">
-                            <video preload="none" muted loop playsinline data-loaded="false">
-                                <source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224238/Curso_de_Finan%C3%A7as_-_Ahlec_Laia_1080p_h264_dzgi6e.mp4#t=0.1" type="video/mp4">
-                            </video>
-                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div></div>
-                        </div>
-                    </div>
-                    <div class="video-card" data-video-src="https://player.vimeo.com/video/1163810483?h=09fb6c32ce" data-video-type="vimeo">
-                        <div class="video-thumbnail">
-                            <iframe data-src="https://player.vimeo.com/video/1163810483?h=09fb6c32ce&background=1&muted=1&loop=1&autopause=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" data-loaded="false"></iframe>
-                            <img src="https://res.cloudinary.com/dooigd0d3/image/upload/v1770816522/brave_screenshot_framer.com_2_jug9cy.png" alt="Vimeo Video" class="vimeo-thumb">
-                            <div class="video-overlay"><div class="play-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Portfolio Video Modal -->
-    <div class="video-modal" id="videoModal">
-        <button class="video-modal-close" id="modalClose"></button>
-        <div class="video-modal-content">
-            <div class="video-modal-player" id="modalPlayer"></div>
-        </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <nav class="mobile-nav">
+            <a href="#hero"               class="mobile-nav-link" data-close-menu>Início</a>
+            <a href="#portfolio"          class="mobile-nav-link" data-close-menu>Portfólio</a>
+            <a href="#problema"           class="mobile-nav-link" data-close-menu>O Problema</a>
+            <a href="#solucao"            class="mobile-nav-link" data-close-menu>A Solução</a>
+            <a href="#metodologia"        class="mobile-nav-link" data-close-menu>Metodologia</a>
+            <a href="#diferenciacao"      class="mobile-nav-link" data-close-menu>Diferenciação</a>
+            <a href="#precos"             class="mobile-nav-link" data-close-menu>Preços</a>
+            <a href="#chamada"            class="mobile-nav-link" data-close-menu>Chamada Gratuita</a>
+            <a href="#sobre"              class="mobile-nav-link" data-close-menu>Sobre Mim</a>
+            <a href="#trabalhos-recentes" class="mobile-nav-link" data-close-menu>Trabalhos Recentes</a>
+        </nav>
     </div>
+</header>
 
-    <!-- ============================================================
-         3. STICKY CTA
-    ============================================================ -->
-    <div class="ahlec-capacity-strip" id="ahlecCapacityStrip" aria-label="Diagnóstico gratuito disponível">
-        <button class="ahlec-close-btn" id="ahlecCloseBtn" aria-label="Fechar">×</button>
-        <div class="ahlec-inner-content">
-            <div class="ahlec-content-group">
-                <span class="ahlec-cap-pill">20 Minutos — Grátis</span>
-                <span class="ahlec-cap-text">Marca uma reunião de 20 minutos comigo para receberes um diagnóstico gratuito sobre o teu sistema de produção de conteúdo.</span>
-            </div>
-            <a href="https://calendly.com/ahlecprofissional/reuniao-estrategica-gratuita?back=1&month=2026-02" class="ahlec-diagnostic-btn" target="_blank" rel="noopener noreferrer">
-                <div class="ahlec-calendar-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18" stroke-width="2">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <line x1="16" y1="2" x2="16" y2="6" stroke-linecap="round" stroke-linejoin="round"/>
-                        <line x1="8" y1="2" x2="8" y2="6" stroke-linecap="round" stroke-linejoin="round"/>
-                        <line x1="3" y1="10" x2="21" y2="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <span class="ahlec-diagnostic-text">Marcar Diagnóstico Grátis Agora</span>
-            </a>
-        </div>
+<!-- ============================================================
+     1. HERO
+============================================================ -->
+<section class="hero-section" id="hero">
+    <div class="motion-lines">
+        <div class="motion-line"></div><div class="motion-line"></div>
+        <div class="motion-line"></div><div class="motion-line"></div>
     </div>
+    <div class="floating-dots">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div>
+    </div>
+    <div class="glow-pulse"></div><div class="glow-pulse"></div>
 
-    <!-- ============================================================
-         4. PROBLEM SECTION
-    ============================================================ -->
-    <section class="problem-section" id="problema">
-        <div class="problem-shapes">
-            <div class="problem-shape"></div>
-            <div class="problem-shape"></div>
-            <div class="problem-shape"></div>
-        </div>
-
-        <div class="problem-container">
-            <div class="problem-label">O Problema</div>
-
-            <h2 class="problem-title">
-                Sabes que precisas de <span class="highlight">vídeos consistentes.</span><br>
-                Mas algo te está a impedir.
-            </h2>
-
-            <p class="problem-subtitle">
-                A maioria dos criadores e profissionais não falha por <strong>falta de conteúdo</strong>. Falha por <strong>falta de consistência, qualidade e tempo</strong> para editar.
-            </p>
-
-            <div class="problems-grid">
-                <!-- Problem 1 -->
-                <div class="problem-card">
-                    <div class="problem-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3 class="problem-card-title">Não tens tempo para editar</h3>
-                    <p class="problem-card-description">
-                        Passas horas a tentar editar, quando devias estar a <strong>criar conteúdo, vender ou atender clientes</strong>. A edição consome o tempo que devias investir no teu negócio.
-                    </p>
-                </div>
-
-                <!-- Problem 2 -->
-                <div class="problem-card">
-                    <div class="problem-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="problem-card-title">Falta de consistência mata autoridade</h3>
-                    <p class="problem-card-description">
-                        Publicas hoje, desapareces amanhã. <strong>A inconsistência destrói a tua credibilidade</strong> e faz com que o algoritmo te ignore. Autoridade exige presença constante.
-                    </p>
-                </div>
-
-                <!-- Problem 3 -->
-                <div class="problem-card">
-                    <div class="problem-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="problem-card-title">Os teus vídeos não convertem</h3>
-                    <p class="problem-card-description">
-                        Views não pagam contas. <strong>Precisas de vídeos que retêm atenção e geram ação</strong> — leads, vendas, agendamentos. Não apenas likes vazios.
-                    </p>
-                </div>
-
-                <!-- Problem 4 -->
-                <div class="problem-card">
-                    <div class="problem-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="problem-card-title">Qualidade inconsistente = imagem amadora</h3>
-                    <p class="problem-card-description">
-                        Um dia o vídeo está polido, no outro parece feito à pressa. <strong>A qualidade inconsistente transmite falta de profissionalismo</strong> e afasta clientes de alto valor.
-                    </p>
+    <div class="hero-container">
+        <!-- Esquerda: VSL -->
+        <div class="hero-video-container">
+            <div class="video-wrapper">
+                <video id="heroVideo" class="hero-video"
+                    poster="https://via.placeholder.com/1920x1080/080808/FFFFFF?text=Video"
+                    preload="metadata">
+                    <source src="your-video-url.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay" id="videoOverlay">
+                    <div class="play-button" id="playButton"><div class="play-icon"></div></div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-         5. SOLUTION SECTION
-    ============================================================ -->
-    <section class="solution-section" id="solucao">
-        <div class="solution-container">
-            <div class="solution-layout">
-
-                <!-- Left Side -->
-                <div class="solution-left">
-                    <div class="solution-header">
-                        <div class="solution-label">A Solução</div>
-                        <h2 class="solution-title">
-                            Um parceiro.<br>
-                            <span class="fade">Não um fornecedor.</span>
-                        </h2>
-                        <p class="solution-subtitle">
-                            Não precisas de microgerir. Não precisas de perder tempo. <strong>Apenas envia os brutos e foca-te no que realmente importa</strong> — criar conteúdo, vender e crescer.
-                        </p>
-                    </div>
-
-                    <div class="accordion-list">
-                        <div class="accordion-item">
-                            <div class="accordion-header">
-                                <div class="accordion-icon-wrapper">
-                                    <div class="accordion-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="accordion-number">01</div>
-                                </div>
-                                <h3 class="accordion-title">Sistema de Produção Previsível</h3>
-                                <div class="accordion-toggle">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="accordion-content">
-                                <div class="accordion-content-inner">
-                                    <p class="accordion-description">
-                                        Não é apenas "edição rápida" — é um <strong>sistema completo de produção</strong>. Fluxo semanal consistente, calendário de publicações organizado e entregas que mantêm o teu canal ativo sem fricção. Previsibilidade = crescimento sustentável.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <div class="accordion-header">
-                                <div class="accordion-icon-wrapper">
-                                    <div class="accordion-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="accordion-number">02</div>
-                                </div>
-                                <h3 class="accordion-title">Edição Focada em Conversão</h3>
-                                <div class="accordion-toggle">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="accordion-content">
-                                <div class="accordion-content-inner">
-                                    <p class="accordion-description">
-                                        Trabalho com negócios que <strong>faturam 6-7 dígitos/ano</strong>. Cada corte, transição e hook é pensado para <strong>retenção máxima e conversão real</strong>. Não apenas vídeos bonitos — vídeos que geram leads, vendas e agendamentos.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <div class="accordion-header">
-                                <div class="accordion-icon-wrapper">
-                                    <div class="accordion-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="accordion-number">03</div>
-                                </div>
-                                <h3 class="accordion-title">Comunicação Direta e Simples</h3>
-                                <div class="accordion-toggle">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="accordion-content">
-                                <div class="accordion-content-inner">
-                                    <p class="accordion-description">
-                                        <strong>WhatsApp/Telegram direto</strong> ou a tua plataforma de preferência. Envias os brutos, recebo, edito e entrego. Feedback claro, revisões rápidas e zero fricção. Comunicação como deve ser: eficaz e simples.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <div class="accordion-header">
-                                <div class="accordion-icon-wrapper">
-                                    <div class="accordion-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="accordion-number">04</div>
-                                </div>
-                                <h3 class="accordion-title">Zero Microgestão Necessária</h3>
-                                <div class="accordion-toggle">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="accordion-content">
-                                <div class="accordion-content-inner">
-                                    <p class="accordion-description">
-                                        Trabalho sozinho e apenas aceito <strong>5 clientes em simultâneo</strong> para garantir atenção total a cada projeto. Entendes o que estás a construir, eu entendo edição estratégica. <strong>Delega, escala e foca-te no teu negócio</strong>.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Side (sticky) -->
-                <div class="solution-right">
-                    <div class="solution-image-wrapper">
-                        <img src="https://res.cloudinary.com/dooigd0d3/image/upload/v1770244054/Pro_Photos_for_Portf%C3%B3lio_4_pnr78y.png" alt="Ahlec a trabalhar" class="solution-image">
-                    </div>
-                    <div class="solution-warning">
-                        <div class="warning-header">
-                            <div class="warning-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <div class="warning-title">Edição é Investimento, Não Custo</div>
-                        </div>
-                        <p class="warning-text">
-                            Os meus clientes recuperam em média <strong>10-15 horas semanais</strong> ao delegar a edição. Esse tempo traduz-se em mais criação de conteúdo, mais vendas ou mais clientes atendidos. <strong>Edição profissional não é despesa — é um investimento que multiplica o teu tempo disponível e autoridade no mercado</strong>.
-                        </p>
-                    </div>
-                </div>
-
+            <div class="video-description">
+                <p class="video-description-text"><strong>Vê este vídeo</strong> para entender como funciona o meu processo de trabalho e se faz sentido conversarmos.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-         6. METHODOLOGY SECTION
-    ============================================================ -->
-    <section class="metodologia-section" id="metodologia">
-        <div class="metodologia-container">
-
-            <div class="metodologia-header">
-                <span class="metodologia-label">Como Funciona</span>
-                <h2 class="metodologia-title">A Metodologia</h2>
-                <p class="metodologia-subtitle">
-                    Processo simples, direto e focado em resultados. Publicas conteúdo consistente sem perder tempo com edição.
-                </p>
-            </div>
-
-            <!-- Framework 3C -->
-            <div class="framework-3c-compact">
-                <h3 class="framework-title">
-                    O Meu Processo: <span class="highlight">Framework 3C</span>
-                </h3>
-                <div class="framework-pillars">
-                    <div class="framework-arrow"></div>
-                    <div class="framework-pillar">
-                        <div class="pillar-number">1</div>
-                        <div class="pillar-name">Clareza</div>
-                        <div class="pillar-description">Identidade visual única</div>
-                    </div>
-                    <div class="framework-pillar">
-                        <div class="pillar-number">2</div>
-                        <div class="pillar-name">Conteúdo</div>
-                        <div class="pillar-description">5 vídeos editados por semana</div>
-                    </div>
-                    <div class="framework-pillar">
-                        <div class="pillar-number">3</div>
-                        <div class="pillar-name">Crescimento</div>
-                        <div class="pillar-description">Análise de métricas para melhorar resultados</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Timeline Intro -->
-            <div class="timeline-intro">
-                <h3 class="timeline-intro-title">Os 5 Passos do Processo</h3>
-                <p class="timeline-intro-subtitle">
-                    Da primeira reunião até à continuidade mensal — tudo pensado para máxima eficiência e resultados reais.
-                </p>
-            </div>
-
-            <!-- Timeline -->
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <div class="timeline-circle">01</div>
-                    <div class="timeline-content">
-                        <div class="timeline-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 10H22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="timeline-step-title">Pagamento + Onboarding</h3>
-                        <span class="timeline-duration">50% para começar</span>
-                        <p class="timeline-description">
-                            Após efetuar <strong>50% do pagamento</strong>, agendamos uma reunião para definir a tua <strong>identidade visual</strong> — cores, fontes, estilo, transições — tudo alinhado com a tua marca. Os restantes <strong>50% serão pagos no final do mês</strong>.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-circle">02</div>
-                    <div class="timeline-content">
-                        <div class="timeline-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M8 21H16M12 17V21M10 7L15 10L10 13V7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="timeline-step-title">Início da Produção</h3>
-                        <span class="timeline-duration">Em 2 dias</span>
-                        <p class="timeline-description">
-                            Em <strong>dois dias</strong>, iniciamos a produção de conteúdos. Gravas os vídeos consoante a tua agenda, mas alinhado com a <strong>regularidade que queres publicar</strong>. Eu crio um <strong>calendário de publicações</strong> para manter tudo organizado.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-circle">03</div>
-                    <div class="timeline-content">
-                        <div class="timeline-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 15V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V15M17 8L12 3L7 8M12 3V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="timeline-step-title">Fluxo de Entrega</h3>
-                        <span class="timeline-duration">Ritmo consistente</span>
-                        <p class="timeline-description">
-                            Envias os brutos → eu entrego cada vídeo editado <strong>rapidamente, mantendo o fluxo semanal consistente</strong>. Os vídeos ficam <strong>profissionais, com ritmo e aspecto premium</strong>, sem perder a tua autenticidade.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-circle">04</div>
-                    <div class="timeline-content">
-                        <div class="timeline-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 5H7C5.9 5 5 5.9 5 7V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V7C19 5.9 18.1 5 17 5H15M9 3H15C15.6 3 16 3.4 16 4V5H8V4C8 3.4 8.4 3 9 3ZM9 12H15M9 16H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="timeline-step-title">Revisão Mensal</h3>
-                        <span class="timeline-duration">Otimização contínua</span>
-                        <p class="timeline-description">
-                            No <strong>final de cada mês</strong>, revemos os resultados (retenção, engajamento, conversões) e <strong>ajustamos a estratégia</strong> de edição. O objetivo não é manter — é <strong>melhorar constantemente</strong>.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-circle">05</div>
-                    <div class="timeline-content">
-                        <div class="timeline-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="timeline-step-title">Pagamento Final + Continuidade</h3>
-                        <span class="timeline-duration">Final do mês</span>
-                        <p class="timeline-description">
-                            No final do mês, efetuás o <strong>pagamento dos restantes 50%</strong>. Se estiveres satisfeito, continuamos no mês seguinte. Se não, sem problema — <strong>não há contratos de permanência</strong>. Trabalho apenas com quem quer resultados reais.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Footer -->
-            <div class="metodologia-footer">
-                <h3 class="metodologia-footer-title">Processo Simples e Eficaz</h3>
-                <p class="metodologia-footer-text">
-                    Com este processo, ganhas tempo para criar conteúdo e interagir com a tua comunidade, enquanto os teus vídeos ficam <strong>consistentes, com ritmo e aspecto profissional</strong>. Trabalho com um número limitado de clientes para garantir <strong>máxima qualidade e atenção a cada projeto</strong>.
-                </p>
-                <div class="metodologia-guarantee">
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </div>
-                        <span class="guarantee-text">Entregas Rápidas</span>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </div>
-                        <span class="guarantee-text">Sem Contratos</span>
-                    </div>
-                    <div class="guarantee-item">
-                        <div class="guarantee-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </div>
-                        <span class="guarantee-text">Revisão Mensal</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ============================================================
-         7. DIFFERENTIATION SECTION
-    ============================================================ -->
-    <section class="comparacao-section" id="diferenciacao">
-        <div class="comparacao-container">
-
-            <div class="comparacao-header">
-                <span class="comparacao-label">A Diferença</span>
-                <h2 class="comparacao-title">
-                    Editor vs. <span class="highlight">Parceiro Estratégico</span>
-                </h2>
-                <p class="comparacao-subtitle">
-                    A maioria entrega vídeos. Eu construo sistemas de conteúdo que geram resultados e libertam o teu tempo.
-                </p>
-            </div>
-
-            <div class="comparison-grid">
-
-                <!-- Editor Tradicional -->
-                <div class="comparison-column traditional">
-                    <div class="comparison-column-header">
-                        <h3 class="comparison-column-title">Editor Tradicional</h3>
-                        <p class="comparison-column-subtitle">Serviço transacional</p>
-                    </div>
-                    <ul class="comparison-list">
-                        <li class="comparison-item">
-                            <div class="comparison-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </div>
-                            <div class="comparison-text">
-                                <div class="comparison-text-title">Entregas inconsistentes</div>
-                                <div class="comparison-text-desc">Atrasos frequentes, sem compromisso real</div>
-                            </div>
-                        </li>
-                        <li class="comparison-item">
-                            <div class="comparison-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </div>
-                            <div class="comparison-text">
-                                <div class="comparison-text-title">Comunicação lenta</div>
-                                <div class="comparison-text-desc">E-mails intermináveis, respostas demoradas</div>
-                            </div>
-                        </li>
-                        <li class="comparison-item">
-                            <div class="comparison-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </div>
-                            <div class="comparison-text">
-                                <div class="comparison-text-title">Apenas execução</div>
-                                <div class="comparison-text-desc">Edita o que pedes, sem visão estratégica</div>
-                            </div>
-                        </li>
-                        <li class="comparison-item">
-                            <div class="comparison-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </div>
-                            <div class="comparison-text">
-                                <div class="comparison-text-title">Microgestão constante</div>
-                                <div class="comparison-text-desc">Revisões intermináveis, alinhamentos contínuos</div>
-                            </div>
-                        </li>
-                        <li class="comparison-item">
-                            <div class="comparison-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </div>
-                            <div class="comparison-text">
-                                <div class="comparison-text-title">Vídeos sem estratégia</div>
-                                <div class="comparison-text-desc">Bonitos mas que não convertem nem geram resultados</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Ahlec (Parceiro) -->
-                <div class="comparison-column ahlec">
-                    <div class="comparison-column-header">
-                        <h3 class="comparison-column-title">Ahlec (Parceiro Estratégico)</h3>
-                        <p class="comparison-column-subtitle">Parceria de longo prazo</p>
-                    </div>
-                    <ul class="comparison-list">
-                        <li class="comparison-item">
-                            <div class="comparison-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </div>
-                            <div class="comparison-text">
-                                <div class="comparison-text-title">Entregas semanais garantidas</div>
-                                <div class="comparison-text-desc">Vídeos prontos toda a semana, sem atrasos</div>
-                            </div>
-                        </li>
-                        <li class="comparison-item">
-                            <div class="comparison-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </div>
-                            <div class="comparison-text">
-                                <div class="comparison-text-title">WhatsApp/Telegram direto</div>
-                                <div class="comparison-text-desc">Resposta em 24h, comunicação clara e rápida</div>
-                            </div>
-                        </li>
-                        <li class="comparison-item">
-                            <div class="comparison-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </div>
-                            <div class="comparison-text">
-                                <div class="comparison-text-title">Edição focada em conversão</div>
-                                <div class="comparison-text-desc">Cada corte com propósito: retenção, leads, vendas</div>
-                            </div>
-                        </li>
-                        <li class="comparison-item">
-                            <div class="comparison-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </div>
-                            <div class="comparison-text">
-                                <div class="comparison-text-title">Zero microgestão</div>
-                                <div class="comparison-text-desc">Envia brutos → recebe vídeos prontos → ajustes rápidos</div>
-                            </div>
-                        </li>
-                        <li class="comparison-item">
-                            <div class="comparison-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </div>
-                            <div class="comparison-text">
-                                <div class="comparison-text-title">Resultados reais</div>
-                                <div class="comparison-text-desc">Vídeos que geram leads, agendamentos e vendas</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- Callout -->
-            <div class="comparison-callout">
-                <h3 class="comparison-callout-title">Já Tentaste Delegar e Não Funcionou?</h3>
-                <p class="comparison-callout-text">
-                    A maioria já trabalhou com freelancers que <strong>atrasaram</strong>, <strong>não entregaram qualidade</strong> ou <strong>exigiram microgestão constante</strong>. A diferença? Compromisso real, comunicação direta, resultados garantidos.
-                </p>
-                <a href="https://wa.me/351965373520?text=Ol%C3%A1%20Ahlec%2C%20cansei-me%20de%20editores%20que%20atrasam%20e%20n%C3%A3o%20entregam%20resultados.%20Quero%20um%20parceiro%20estrat%C3%A9gico%20que%20entregue%20v%C3%ADdeos%20semanalmente%20com%20qualidade%20e%20sem%20microgest%C3%A3o.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="comparison-callout-button">
-                    <span>Falar com o Ahlec</span>
-                    <span class="cta-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/></svg>
-                    </span>
+            <div class="video-cta-section">
+                <a href="https://wa.me/351965373520?text=Ol%C3%A1%20Ahlec%2C%20acabei%20de%20ver%20o%20teu%20site%20e%20gostava%20de%20marcar%20uma%20chamada%20contigo." target="_blank" rel="noopener noreferrer" class="video-cta-button">
+                    <span>Agendar Chamada Estratégica</span><span class="cta-arrow"></span>
                 </a>
+                <p class="video-micro-copy">Contacta via WhatsApp para marcarmos uma chamada<br>e avaliarmos o alinhamento entre ambos</p>
             </div>
-
-        </div>
-    </section>
-
-    <!-- ============================================================
-         8. PRICING SECTION — Order: Essencial | Elite (featured) | Pro
-    ============================================================ -->
-    <section class="pricing-section" id="precos">
-        <div class="pricing-container">
-
-            <div class="pricing-header">
-                <span class="pricing-label">Investimento</span>
-                <h2 class="pricing-title">Escolhe o Teu Plano</h2>
-                <p class="pricing-subtitle">
-                    Pacotes mensais com entregas semanais garantidas. Sem contratos de permanência — cancela quando quiseres.
-                </p>
-            </div>
-
-            <div class="pricing-grid">
-
-                <!-- Essencial -->
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <div class="pricing-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 16V8C21 6.9 20.1 6 19 6H5C3.9 6 3 6.9 3 8V16C3 17.1 3.9 18 5 18H19C20.1 18 21 17.1 21 16Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M3 10H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+            <div class="video-credibility-wrapper">
+                <div class="credibility-intro">Parceiros Comerciais</div>
+                <div class="video-credibility">
+                    <div class="cred-badge">
+                        <div class="cred-header">
+                            <div><div class="cred-label">Parceiro Direto</div><div class="cred-title">Elite Agency</div></div>
+                            <div class="cred-price">€1.250</div>
                         </div>
-                        <h3 class="pricing-name">Essencial</h3>
-                        <div class="pricing-price">
-                            <span class="pricing-amount">397</span>
-                            <span class="pricing-currency">€</span>
-                            <span class="pricing-period">/ mês</span>
+                        <div class="cred-description">Todo o conteúdo de vídeo da agência. Marketing de alto nível para negócios locais premium.</div>
+                        <div class="cred-footer">
+                            <div class="cred-type">Serviço Completo</div>
+                            <div class="cred-result">Faturação: <span class="cred-result-number">6 Dígitos/Ano</span></div>
                         </div>
                     </div>
-                    <ul class="pricing-features">
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Identidade visual única</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>3 vídeos/semana</strong> (12 vídeos/mês)</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>1 ronda de revisões por vídeo</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Comunicação Rápida e Transparente</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Entregas rápidas com fluxo consistente</span></li>
-                    </ul>
-                    <a href="https://wa.me/351965373520?text=Ol%C3%A1%20Ahlec%2C%20estou%20interessado%20no%20Pacote%20Essencial%20(397%E2%82%AC%2Fm%C3%AAs)%20com%203%20v%C3%ADdeos%20por%20semana." target="_blank" rel="noopener noreferrer" class="pricing-cta">Escolher Essencial</a>
-                </div>
-
-                <!-- Elite (FEATURED — CENTER) -->
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">
-                        <div class="badge-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
+                    <div class="cred-badge">
+                        <div class="cred-header">
+                            <div><div class="cred-label">E-commerce Premium</div><div class="cred-title">Orgheal x João Alfar</div></div>
+                            <div class="cred-price">€10k</div>
                         </div>
-                        <span>Mais Popular</span>
-                    </div>
-                    <div class="pricing-card-header">
-                        <div class="pricing-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="pricing-name">Elite</h3>
-                        <div class="pricing-price">
-                            <span class="pricing-amount">1197</span>
-                            <span class="pricing-currency">€</span>
-                            <span class="pricing-period">/ mês</span>
+                        <div class="cred-description">Mini-VSLs e vídeos de produto (confidenciais). Edição para funis de marca de e-commerce de 8 dígitos.</div>
+                        <div class="cred-footer">
+                            <div class="cred-type">Ads + VSL's + Mini VSL's</div>
+                            <div class="cred-result">Resultado: <span class="cred-result-number">50k/mês</span></div>
                         </div>
                     </div>
-                    <ul class="pricing-features">
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Identidade visual única</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>5 vídeos/semana</strong> (20 vídeos/mês)</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>4 Reels Premium</strong> com edição avançada</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>3 rondas de revisões por vídeo</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Reunião semanal para análise de estatísticas</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Acesso total à minha especialização</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Comunicação Rápida e Transparente</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Entrega prioritária e fluxo consistente</span></li>
-                    </ul>
-                    <a href="https://wa.me/351965373520?text=Ol%C3%A1%20Ahlec%2C%20quero%20o%20Pacote%20Elite%20(1197%E2%82%AC%2Fm%C3%AAs)%20com%205%20v%C3%ADdeos%2Bsemana%2C%204%20Reels%20Premium%20e%20reuni%C3%B5es%20semanais.%20Vamos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="pricing-cta">Escolher Elite</a>
                 </div>
-
-                <!-- Pro -->
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <div class="pricing-icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="pricing-name">Pro</h3>
-                        <div class="pricing-price">
-                            <span class="pricing-amount">597</span>
-                            <span class="pricing-currency">€</span>
-                            <span class="pricing-period">/ mês</span>
-                        </div>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Identidade visual única</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>5 vídeos/semana</strong> (20 vídeos/mês)</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>2 rondas de revisões por vídeo</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Reunião mensal para análise de estatísticas</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Comunicação Rápida e Transparente</span></li>
-                        <li><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Entregas rápidas com fluxo consistente</span></li>
-                    </ul>
-                    <a href="https://wa.me/351965373520?text=Ol%C3%A1%20Ahlec%2C%20estou%20interessado%20no%20Pacote%20Pro%20(597%E2%82%AC%2Fm%C3%AAs)%20com%205%20v%C3%ADdeos%20por%20semana%20e%20an%C3%A1lise%20mensal." target="_blank" rel="noopener noreferrer" class="pricing-cta">Escolher Pro</a>
-                </div>
-
-                <!-- Footer Note — Full Width -->
-                <div class="pricing-footer">
-                    <p class="pricing-footer-text">
-                        <strong>Todos os planos incluem Estratégia e Planeamento de conteúdo Personalizado</strong>. Sem contratos de permanência — cancela quando quiseres.
-                    </p>
-                </div>
-
             </div>
         </div>
-    </section>
 
-    <!-- ============================================================
-         9. FREE CALL / CALENDLY SECTION
-    ============================================================ -->
-    <section class="freecall-section" id="chamada">
-        <div class="freecall-container">
-            <div class="freecall-card">
-
-                <!-- Left: Content -->
-                <div class="freecall-content">
-                    <span class="freecall-label">Chamada Estratégica Gratuita</span>
-                    <h2 class="freecall-title">
-                        Vamos Analisar o Teu <span class="highlight">Conteúdo Juntos</span>
-                    </h2>
-                    <p class="freecall-description">
-                        Agenda uma chamada estratégica gratuita de 15-20 minutos. Vou analisar o teu conteúdo atual, propor uma estratégia personalizada e mostrar-te como posso ajudar a escalar com vídeos que convertem.
-                    </p>
-
-                    <ul class="freecall-benefits">
-                        <li>
-                            <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                            <span>Análise do teu conteúdo atual (15-20 min)</span>
-                        </li>
-                        <li>
-                            <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                            <span>Estratégia personalizada para o teu nicho</span>
-                        </li>
-                        <li>
-                            <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                            <span>Proposta de identidade visual única</span>
-                        </li>
-                        <li>
-                            <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                            <span>Alinhamento de expectativas e timelines</span>
-                        </li>
-                        <li>
-                            <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                            <span>Zero pressão, zero compromisso</span>
-                        </li>
-                    </ul>
-
-                    <p class="freecall-note">Resposta garantida em 24h</p>
-                </div>
-
-                <!-- Right: Calendly Embed -->
-                <div class="freecall-calendly">
-                    <div class="calendly-inline-widget" 
-                         data-url="https://calendly.com/ahlecprofissional/reuniao-estrategica-gratuita?back=1&month=2026-02"
-                         style="min-width:280px;height:700px;">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-         10. ABOUT SECTION
-    ============================================================ -->
-    <section class="about-section" id="sobre">
-        <div class="about-container">
-            <!-- Profile Header -->
-            <div class="about-profile">
-                <div class="about-avatar">
+        <!-- Direita: Copy -->
+        <div class="hero-content">
+            <div class="profile-section">
+                <div class="profile-avatar">
                     <img src="https://res.cloudinary.com/dooigd0d3/image/upload/v1769610431/New_Perfil_4_wenty9.png" alt="Ahlec Laia">
                 </div>
-                <div class="about-profile-info">
-                    <div class="about-name">Ahlec Laia</div>
-                    <div class="about-specialization">Editor de Vídeo Especializado</div>
+                <div class="profile-info">
+                    <div class="profile-name">Ahlec Laia</div>
+                    <div class="profile-specialization">Editor de Vídeo Especializado</div>
                 </div>
             </div>
-
-            <!-- About Text -->
-            <div class="about-text">
-                <p>
-                    Sou o <strong>Ahlec</strong> e desde sempre imaginei mundos diferentes — formas de contar histórias que realmente importam. O que me move não é apenas criar vídeos bonitos, mas <strong>dar vida a narrativas que inspiram e convertem</strong>.
-                </p>
-                <p>
-                    Durante a adolescência, comecei a explorar edição de vídeo de forma autodidata, sempre de mãos à obra nos meus próprios projetos. Com o tempo, formei-me em <strong>Cinema e Produção Audiovisual na ETIC</strong>, onde aprofundei o conhecimento em todos os aspetos da produção — desde estratégia até execução técnica.
-                </p>
-                <p>
-                    Este é o meu estilo: <strong>rico em detalhe, vibrante e cheio de referências que contam uma história</strong>. Mas explorar novos estilos e técnicas é essencial para mim, porque a aprendizagem nunca para. Trabalho sozinho porque ainda não encontrei editores com o nível de <strong>compromisso e atenção ao detalhe</strong> que os meus clientes esperam.
-                </p>
-            </div>
-
-            <!-- Helped Section -->
-            <div class="about-helped">
-                <span class="about-helped-label">Com Quem Trabalho</span>
-                <div class="about-helped-list">
-                    Trabalho com pessoas que <strong>não procuram o editor mais barato, mas o parceiro certo</strong>. Pessoas que sabem o que querem, confiam no processo e entendem que <strong>resultados reais exigem compromisso de ambas as partes</strong>.
-                </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="about-social">
-                <a href="https://www.linkedin.com/in/ahlec-laia-3710b6276/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="currentColor"/></svg>
-                </a>
-                <a href="/cdn-cgi/l/email-protection#ceafa6a2abadbebca1a8a7bdbda7a1a0afa28ea9a3afa7a2e0ada1a3" class="social-link" aria-label="Email">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg>
-                </a>
-                <a href="https://www.instagram.com/ahlec_magikraft/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="currentColor"/></svg>
-                </a>
-                <a href="https://wa.me/351965373520" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/></svg>
-                </a>
+            <h1 class="hero-headline">Cada Segundo Conta.<br><span class="highlight">Cada Frame Converte.</span></h1>
+            <p class="hero-subheadline">Se o teu negócio já fatura, tenho a infraestrutura de edição que precisas. Não edito "vídeos bonitos" — <strong>construo narrativas que vendem</strong>. Transformo criadores em máquinas de conversão. Candidata-te apenas se estiveres pronto para escalar.</p>
+            <ul class="hero-benefits">
+                <li>Edição focada em retenção e conversão real</li>
+                <li>Parceiro de negócios que geram 6-7 dígitos/ano</li>
+                <li>Entregas rápidas com fluxo semanal consistente</li>
+            </ul>
+            <div class="exclusivity-notice">
+                <div class="exclusivity-title">Qualidade Acima de Tudo</div>
+                <div class="exclusivity-text">Mantenho um máximo de <strong>5 clientes ativos</strong> para garantir que cada vídeo recebe dias (não horas) de atenção. Para que eu entregue ao mais alto nível, preciso de foco total em cada projeto.</div>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="scroll-indicator">Scroll<div class="scroll-line"></div></div>
+</section>
 
-    <!-- ============================================================
-         11. RECENT WORK SECTION
-    ============================================================ -->
-    <section class="portfolio-section recent-work-section" id="trabalhos-recentes">
+<!-- ============================================================
+     2. PORTFOLIO
+============================================================ -->
+<section class="portfolio-section" id="portfolio">
+    <div class="portfolio-container">
         <div class="portfolio-header">
-            <h2 class="recent-work-title">Trabalhos Recentes</h2>
-            <p>Cada projeto foi pensado para converter, reter e escalar o negócio dos meus clientes.</p>
-
-            <div class="carousel-controls">
-                <button class="carousel-control-btn" id="toggleAutoScroll">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
-                    <span>Pausar Auto-Scroll</span>
-                </button>
+            <div class="portfolio-label">Portfólio</div>
+            <h2 class="portfolio-title">Vídeos que <span class="highlight">Convertem</span></h2>
+            <p class="portfolio-subtitle">Cada frame é uma decisão estratégica — ritmo, retenção e conversão ao serviço do teu negócio.</p>
+        </div>
+        <div class="carousel-wrapper" id="carouselWrapper">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Video 1 -->
+                <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224061/Imobili%C3%A1rio_e_CAEPs_-_Ahlec_Laia_1080p_h264_inmnf2.mp4" data-video-type="direct">
+                    <div class="video-thumbnail"><video preload="none" muted loop playsinline><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224061/Imobili%C3%A1rio_e_CAEPs_-_Ahlec_Laia_1080p_h264_inmnf2.mp4#t=0.1" type="video/mp4"></video><div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+                </div>
+                <!-- Video 2 -->
+                <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224066/Como_se_define_o_pre%C3%A7o_duma_A%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_p4xrro.mp4" data-video-type="direct">
+                    <div class="video-thumbnail"><video preload="none" muted loop playsinline><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224066/Como_se_define_o_pre%C3%A7o_duma_A%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_p4xrro.mp4#t=0.1" type="video/mp4"></video><div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+                </div>
+                <!-- Video 3 -->
+                <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224067/Reforma_te_com_Bitcoin_-_Ahlec_Laia_1080p_h264_f7dmam.mp4" data-video-type="direct">
+                    <div class="video-thumbnail"><video preload="none" muted loop playsinline><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224067/Reforma_te_com_Bitcoin_-_Ahlec_Laia_1080p_h264_f7dmam.mp4#t=0.1" type="video/mp4"></video><div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+                </div>
+                <!-- Video 4 -->
+                <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224075/Agente_Imobili%C3%A1rio_-_Ahlec_Laia_1080p_h264_rxxnwu.mp4" data-video-type="direct">
+                    <div class="video-thumbnail"><video preload="none" muted loop playsinline><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224075/Agente_Imobili%C3%A1rio_-_Ahlec_Laia_1080p_h264_rxxnwu.mp4#t=0.1" type="video/mp4"></video><div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+                </div>
+                <!-- Video 5 -->
+                <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224233/O_Radar_Financeiro_-_Ahlec_Laia_1080p_h264_edx2px.mp4" data-video-type="direct">
+                    <div class="video-thumbnail"><video preload="none" muted loop playsinline><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224233/O_Radar_Financeiro_-_Ahlec_Laia_1080p_h264_edx2px.mp4#t=0.1" type="video/mp4"></video><div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+                </div>
+                <!-- Video 6 -->
+                <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224238/Curso_de_Finan%C3%A7as_-_Ahlec_Laia_1080p_h264_dzgi6e.mp4" data-video-type="direct">
+                    <div class="video-thumbnail"><video preload="none" muted loop playsinline><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224238/Curso_de_Finan%C3%A7as_-_Ahlec_Laia_1080p_h264_dzgi6e.mp4#t=0.1" type="video/mp4"></video><div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+                </div>
+                <!-- Video 7 Vimeo -->
+                <div class="video-card" data-video-src="https://player.vimeo.com/video/1163810483?h=09fb6c32ce" data-video-type="vimeo">
+                    <div class="video-thumbnail">
+                        <iframe data-src="https://player.vimeo.com/video/1163810483?h=09fb6c32ce&background=1&muted=1&loop=1&autopause=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" data-loaded="false"></iframe>
+                        <img src="https://res.cloudinary.com/dooigd0d3/image/upload/v1770816522/brave_screenshot_framer.com_2_jug9cy.png" alt="Vimeo" class="vimeo-thumb">
+                        <div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+                    </div>
+                </div>
+                <!-- Duplicatas para scroll infinito -->
+                <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224061/Imobili%C3%A1rio_e_CAEPs_-_Ahlec_Laia_1080p_h264_inmnf2.mp4" data-video-type="direct"><div class="video-thumbnail"><video preload="none" muted loop playsinline><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224061/Imobili%C3%A1rio_e_CAEPs_-_Ahlec_Laia_1080p_h264_inmnf2.mp4#t=0.1" type="video/mp4"></video><div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+                <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224066/Como_se_define_o_pre%C3%A7o_duma_A%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_p4xrro.mp4" data-video-type="direct"><div class="video-thumbnail"><video preload="none" muted loop playsinline><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224066/Como_se_define_o_pre%C3%A7o_duma_A%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_p4xrro.mp4#t=0.1" type="video/mp4"></video><div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+                <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224067/Reforma_te_com_Bitcoin_-_Ahlec_Laia_1080p_h264_f7dmam.mp4" data-video-type="direct"><div class="video-thumbnail"><video preload="none" muted loop playsinline><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224067/Reforma_te_com_Bitcoin_-_Ahlec_Laia_1080p_h264_f7dmam.mp4#t=0.1" type="video/mp4"></video><div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+                <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224075/Agente_Imobili%C3%A1rio_-_Ahlec_Laia_1080p_h264_rxxnwu.mp4" data-video-type="direct"><div class="video-thumbnail"><video preload="none" muted loop playsinline><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224075/Agente_Imobili%C3%A1rio_-_Ahlec_Laia_1080p_h264_rxxnwu.mp4#t=0.1" type="video/mp4"></video><div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+                <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224233/O_Radar_Financeiro_-_Ahlec_Laia_1080p_h264_edx2px.mp4" data-video-type="direct"><div class="video-thumbnail"><video preload="none" muted loop playsinline><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224233/O_Radar_Financeiro_-_Ahlec_Laia_1080p_h264_edx2px.mp4#t=0.1" type="video/mp4"></video><div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+                <div class="video-card" data-video-src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224238/Curso_de_Finan%C3%A7as_-_Ahlec_Laia_1080p_h264_dzgi6e.mp4" data-video-type="direct"><div class="video-thumbnail"><video preload="none" muted loop playsinline><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770224238/Curso_de_Finan%C3%A7as_-_Ahlec_Laia_1080p_h264_dzgi6e.mp4#t=0.1" type="video/mp4"></video><div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+                <div class="video-card" data-video-src="https://player.vimeo.com/video/1163810483?h=09fb6c32ce" data-video-type="vimeo"><div class="video-thumbnail"><iframe data-src="https://player.vimeo.com/video/1163810483?h=09fb6c32ce&background=1&muted=1&loop=1&autopause=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" data-loaded="false"></iframe><img src="https://res.cloudinary.com/dooigd0d3/image/upload/v1770816522/brave_screenshot_framer.com_2_jug9cy.png" alt="Vimeo" class="vimeo-thumb"><div class="video-overlay"><div class="play-icon-portfolio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="carousel-wrapper recent-carousel-wrapper" id="recentCarouselWrapper">
-            <div class="carousel-track recent-carousel-track" id="recentCarouselTrack">
+<!-- Portfolio Modal -->
+<div class="video-modal" id="videoModal">
+    <button class="video-modal-close" id="modalClose"></button>
+    <div class="video-modal-content">
+        <div class="video-modal-player" id="modalPlayer"></div>
+    </div>
+</div>
 
-                <!-- Column 1 -->
-                <div class="video-column">
-                    <div class="video-card landscape" data-video="https://www.youtube.com/embed/HLrXPtUo01A" data-type="youtube" data-aspect="landscape" data-category="YouTube" data-title="Como Criar Vídeos que Vendem" data-description="Estratégia completa de edição para conversão.">
-                        <img src="https://img.youtube.com/vi/HLrXPtUo01A/maxresdefault.jpg" alt="YouTube 01" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">YouTube</span><h3 class="video-title">Como Criar Vídeos que Vendem</h3><p class="video-description-card">Estratégia completa de edição.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                    <div class="video-card portrait" data-video="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310914/Javier_Milei_Antes_Agora_Politica_-_Ahlec_Laia_1080p_h264_fg3gke.mp4" data-type="direct" data-aspect="portrait" data-category="Reel" data-title="Javier Milei — Antes e Agora" data-description="Storytelling político impactante com narrativa visual forte.">
-                        <video class="video-thumbnail" muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310914/Javier_Milei_Antes_Agora_Politica_-_Ahlec_Laia_1080p_h264_fg3gke.mp4#t=0.5" type="video/mp4"></video>
-                        <div class="video-overlay"><span class="video-category">Reel</span><h3 class="video-title">Javier Milei — Antes e Agora</h3><p class="video-description-card">Storytelling político impactante.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                </div>
+<!-- ============================================================
+     3. STICKY CTA
+============================================================ -->
+<div class="ahlec-capacity-strip" id="ahlecCapacityStrip">
+    <button class="ahlec-close-btn" id="ahlecCloseBtn" aria-label="Fechar">×</button>
+    <div class="ahlec-inner-content">
+        <div class="ahlec-content-group">
+            <span class="ahlec-cap-pill">20 Minutos — Grátis</span>
+            <span class="ahlec-cap-text">Marca uma reunião de 20 minutos comigo para receberes um diagnóstico gratuito sobre o teu sistema de produção de conteúdo.</span>
+        </div>
+        <a href="https://calendly.com/ahlecprofissional/reuniao-estrategica-gratuita?back=1&month=2026-02" class="ahlec-diagnostic-btn" target="_blank" rel="noopener noreferrer">
+            <div class="ahlec-calendar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+            </div>
+            <span class="ahlec-diagnostic-text">Marcar Diagnóstico Grátis Agora</span>
+        </a>
+    </div>
+</div>
 
-                <!-- Column 2 -->
-                <div class="video-column">
-                    <div class="video-card portrait" data-video="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310923/O_que_%C3%A9_o_Homeschooling_-_Educa%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_v0e2kr.mp4" data-type="direct" data-aspect="portrait" data-category="Educação" data-title="O que é o Homeschooling?" data-description="Conteúdo educativo com edição clean e informativa.">
-                        <video class="video-thumbnail" muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310923/O_que_%C3%A9_o_Homeschooling_-_Educa%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_v0e2kr.mp4#t=0.5" type="video/mp4"></video>
-                        <div class="video-overlay"><span class="video-category">Educação</span><h3 class="video-title">O que é o Homeschooling?</h3><p class="video-description-card">Conteúdo educativo premium.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                    <div class="video-card portrait" data-video="https://www.youtube.com/embed/4HC8ra7eCqM" data-type="youtube" data-aspect="portrait" data-category="YouTube" data-title="Edição Premium para Coaches" data-description="Case study de cliente com resultados comprovados.">
-                        <img src="https://img.youtube.com/vi/4HC8ra7eCqM/maxresdefault.jpg" alt="YouTube 02" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">YouTube</span><h3 class="video-title">Edição Premium para Coaches</h3><p class="video-description-card">Case study com resultados.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                </div>
-
-                <!-- Column 3 -->
-                <div class="video-column">
-                    <div class="video-card landscape" data-video="https://www.youtube.com/embed/B_XmIqvukPM" data-type="youtube" data-aspect="landscape" data-category="YouTube" data-title="Storytelling que Converte" data-description="Técnicas de edição para máxima retenção.">
-                        <img src="https://img.youtube.com/vi/B_XmIqvukPM/maxresdefault.jpg" alt="YouTube 03" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">YouTube</span><h3 class="video-title">Storytelling que Converte</h3><p class="video-description-card">Máxima retenção garantida.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                    <div class="video-card portrait" data-video="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310921/Cobertura_de_Evento_-_Ahlec_Laia_1080p_h264_tcwsis.mp4" data-type="direct" data-aspect="portrait" data-category="Evento" data-title="Cobertura de Evento Premium" data-description="Edição dinâmica de evento corporativo com múltiplos ângulos.">
-                        <video class="video-thumbnail" muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310921/Cobertura_de_Evento_-_Ahlec_Laia_1080p_h264_tcwsis.mp4#t=0.5" type="video/mp4"></video>
-                        <div class="video-overlay"><span class="video-category">Evento</span><h3 class="video-title">Cobertura de Evento Premium</h3><p class="video-description-card">Edição corporativa dinâmica.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                </div>
-
-                <!-- Column 4 -->
-                <div class="video-column">
-                    <div class="video-card landscape" data-video="https://www.youtube.com/embed/0Rwt55AWSUc" data-type="youtube" data-aspect="landscape" data-category="Reel" data-title="Transformação Fitness" data-description="Antes e depois com métricas claras e hooks poderosos.">
-                        <img src="https://img.youtube.com/vi/0Rwt55AWSUc/maxresdefault.jpg" alt="YouTube 04" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">Reel</span><h3 class="video-title">Transformação Fitness</h3><p class="video-description-card">Antes e depois impactante.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                    <div class="video-card landscape" data-video="https://www.youtube.com/embed/XO2152gjKW4" data-type="youtube" data-aspect="landscape" data-category="Ad" data-title="Ad de Alto Impacto" data-description="Estratégia de venda direta com hook validado.">
-                        <img src="https://img.youtube.com/vi/XO2152gjKW4/maxresdefault.jpg" alt="YouTube 05" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">Ad</span><h3 class="video-title">Ad de Alto Impacto</h3><p class="video-description-card">Hook validado e CTA direto.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                </div>
-
-                <!-- Column 5 -->
-                <div class="video-column">
-                    <div class="video-card landscape" data-video="https://www.youtube.com/embed/TyI-mSr2_FM" data-type="youtube" data-aspect="landscape" data-category="VSL" data-title="VSL Completa — Elite Agency" data-description="Estrutura de conversão comprovada com storytelling estratégico.">
-                        <img src="https://img.youtube.com/vi/TyI-mSr2_FM/maxresdefault.jpg" alt="YouTube 06" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">VSL</span><h3 class="video-title">VSL Completa — Elite Agency</h3><p class="video-description-card">Conversão comprovada.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                    <div class="video-card landscape" data-video="https://www.youtube.com/embed/P2FcdaP1oXo" data-type="youtube" data-aspect="landscape" data-category="Testemunho" data-title="Cliente Real — Resultados" data-description="Testemunho autêntico com dados concretos e impacto emocional.">
-                        <img src="https://img.youtube.com/vi/P2FcdaP1oXo/maxresdefault.jpg" alt="YouTube 07" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">Testemunho</span><h3 class="video-title">Cliente Real — Resultados</h3><p class="video-description-card">Dados concretos e impacto.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                </div>
-
-                <!-- DUPLICATES -->
-                <div class="video-column">
-                    <div class="video-card landscape" data-video="https://www.youtube.com/embed/HLrXPtUo01A" data-type="youtube" data-aspect="landscape" data-category="YouTube" data-title="Como Criar Vídeos que Vendem" data-description="Estratégia completa de edição para conversão.">
-                        <img src="https://img.youtube.com/vi/HLrXPtUo01A/maxresdefault.jpg" alt="YouTube 01" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">YouTube</span><h3 class="video-title">Como Criar Vídeos que Vendem</h3><p class="video-description-card">Estratégia completa.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                    <div class="video-card portrait" data-video="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310914/Javier_Milei_Antes_Agora_Politica_-_Ahlec_Laia_1080p_h264_fg3gke.mp4" data-type="direct" data-aspect="portrait" data-category="Reel" data-title="Javier Milei — Antes e Agora" data-description="Storytelling político impactante.">
-                        <video class="video-thumbnail" muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310914/Javier_Milei_Antes_Agora_Politica_-_Ahlec_Laia_1080p_h264_fg3gke.mp4#t=0.5" type="video/mp4"></video>
-                        <div class="video-overlay"><span class="video-category">Reel</span><h3 class="video-title">Javier Milei — Antes e Agora</h3><p class="video-description-card">Storytelling político.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                </div>
-                <div class="video-column">
-                    <div class="video-card portrait" data-video="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310923/O_que_%C3%A9_o_Homeschooling_-_Educa%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_v0e2kr.mp4" data-type="direct" data-aspect="portrait" data-category="Educação" data-title="O que é o Homeschooling?" data-description="Conteúdo educativo premium.">
-                        <video class="video-thumbnail" muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310923/O_que_%C3%A9_o_Homeschooling_-_Educa%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_v0e2kr.mp4#t=0.5" type="video/mp4"></video>
-                        <div class="video-overlay"><span class="video-category">Educação</span><h3 class="video-title">O que é o Homeschooling?</h3><p class="video-description-card">Conteúdo educativo premium.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                    <div class="video-card portrait" data-video="https://www.youtube.com/embed/4HC8ra7eCqM" data-type="youtube" data-aspect="portrait" data-category="YouTube" data-title="Edição Premium para Coaches" data-description="Case study com resultados.">
-                        <img src="https://img.youtube.com/vi/4HC8ra7eCqM/maxresdefault.jpg" alt="YouTube 02" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">YouTube</span><h3 class="video-title">Edição Premium para Coaches</h3><p class="video-description-card">Case study com resultados.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                </div>
-                <div class="video-column">
-                    <div class="video-card landscape" data-video="https://www.youtube.com/embed/B_XmIqvukPM" data-type="youtube" data-aspect="landscape" data-category="YouTube" data-title="Storytelling que Converte" data-description="Técnicas de edição para máxima retenção.">
-                        <img src="https://img.youtube.com/vi/B_XmIqvukPM/maxresdefault.jpg" alt="YouTube 03" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">YouTube</span><h3 class="video-title">Storytelling que Converte</h3><p class="video-description-card">Máxima retenção garantida.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                    <div class="video-card portrait" data-video="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310921/Cobertura_de_Evento_-_Ahlec_Laia_1080p_h264_tcwsis.mp4" data-type="direct" data-aspect="portrait" data-category="Evento" data-title="Cobertura de Evento Premium" data-description="Edição corporativa dinâmica.">
-                        <video class="video-thumbnail" muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310921/Cobertura_de_Evento_-_Ahlec_Laia_1080p_h264_tcwsis.mp4#t=0.5" type="video/mp4"></video>
-                        <div class="video-overlay"><span class="video-category">Evento</span><h3 class="video-title">Cobertura de Evento Premium</h3><p class="video-description-card">Edição corporativa dinâmica.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                </div>
-                <div class="video-column">
-                    <div class="video-card landscape" data-video="https://www.youtube.com/embed/0Rwt55AWSUc" data-type="youtube" data-aspect="landscape" data-category="Reel" data-title="Transformação Fitness" data-description="Antes e depois impactante.">
-                        <img src="https://img.youtube.com/vi/0Rwt55AWSUc/maxresdefault.jpg" alt="YouTube 04" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">Reel</span><h3 class="video-title">Transformação Fitness</h3><p class="video-description-card">Antes e depois impactante.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                    <div class="video-card landscape" data-video="https://www.youtube.com/embed/XO2152gjKW4" data-type="youtube" data-aspect="landscape" data-category="Ad" data-title="Ad de Alto Impacto" data-description="Hook validado e CTA direto.">
-                        <img src="https://img.youtube.com/vi/XO2152gjKW4/maxresdefault.jpg" alt="YouTube 05" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">Ad</span><h3 class="video-title">Ad de Alto Impacto</h3><p class="video-description-card">Hook validado e CTA direto.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                </div>
-                <div class="video-column">
-                    <div class="video-card landscape" data-video="https://www.youtube.com/embed/TyI-mSr2_FM" data-type="youtube" data-aspect="landscape" data-category="VSL" data-title="VSL Completa — Elite Agency" data-description="Conversão comprovada.">
-                        <img src="https://img.youtube.com/vi/TyI-mSr2_FM/maxresdefault.jpg" alt="YouTube 06" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">VSL</span><h3 class="video-title">VSL Completa — Elite Agency</h3><p class="video-description-card">Conversão comprovada.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                    <div class="video-card landscape" data-video="https://www.youtube.com/embed/P2FcdaP1oXo" data-type="youtube" data-aspect="landscape" data-category="Testemunho" data-title="Cliente Real — Resultados" data-description="Dados concretos e impacto.">
-                        <img src="https://img.youtube.com/vi/P2FcdaP1oXo/maxresdefault.jpg" alt="YouTube 07" class="video-thumbnail" loading="lazy">
-                        <div class="video-overlay"><span class="video-category">Testemunho</span><h3 class="video-title">Cliente Real — Resultados</h3><p class="video-description-card">Dados concretos e impacto.</p></div>
-                        <div class="play-icon-btn"></div>
-                    </div>
-                </div>
-
+<!-- ============================================================
+     4. PROBLEMA
+============================================================ -->
+<section class="problem-section" id="problema">
+    <div class="problem-shapes">
+        <div class="problem-shape"></div><div class="problem-shape"></div><div class="problem-shape"></div>
+    </div>
+    <div class="problem-container">
+        <div class="problem-label">O Problema</div>
+        <h2 class="problem-title">Sabes que precisas de <span class="highlight">vídeos consistentes.</span><br>Mas algo te está a impedir.</h2>
+        <p class="problem-subtitle">A maioria dos criadores e profissionais não falha por <strong>falta de conteúdo</strong>. Falha por <strong>falta de consistência, qualidade e tempo</strong> para editar.</p>
+        <div class="problems-grid">
+            <div class="problem-card">
+                <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg></div>
+                <h3 class="problem-card-title">Não tens tempo para editar</h3>
+                <p class="problem-card-description">Passas horas a tentar editar, quando devias estar a <strong>criar conteúdo, vender ou atender clientes</strong>. A edição consome o tempo que devias investir no teu negócio.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <h3 class="problem-card-title">Falta de consistência mata autoridade</h3>
+                <p class="problem-card-description">Publicas hoje, desapareces amanhã. <strong>A inconsistência destrói a tua credibilidade</strong> e faz com que o algoritmo te ignore. Autoridade exige presença constante.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <h3 class="problem-card-title">Os teus vídeos não convertem</h3>
+                <p class="problem-card-description">Views não pagam contas. <strong>Precisas de vídeos que retêm atenção e geram ação</strong> — leads, vendas, agendamentos. Não apenas likes vazios.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <h3 class="problem-card-title">Qualidade inconsistente = imagem amadora</h3>
+                <p class="problem-card-description">Um dia o vídeo está polido, no outro parece feito à pressa. <strong>A qualidade inconsistente transmite falta de profissionalismo</strong> e afasta clientes de alto valor.</p>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- Recent Work Modal -->
-        <div class="video-modal recent-modal" id="recentModal">
-            <button class="modal-close" id="recentModalClose" aria-label="Fechar vídeo"><span></span></button>
-            <div class="modal-content" id="recentModalContent">
-                <iframe id="recentModalIframe" class="modal-iframe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:none;"></iframe>
-                <video id="recentModalVideo" class="modal-video" controls style="display:none;"><source src="" type="video/mp4"></video>
-                <div class="modal-info">
-                    <span class="modal-category" id="recentModalCategory"></span>
-                    <h3 class="modal-title" id="recentModalTitle"></h3>
-                    <p class="modal-description" id="recentModalDescription"></p>
+<!-- ============================================================
+     5. SOLUÇÃO
+============================================================ -->
+<section class="solution-section" id="solucao">
+    <div class="solution-container">
+        <div class="solution-layout">
+            <div class="solution-left">
+                <div class="solution-header">
+                    <div class="solution-label">A Solução</div>
+                    <h2 class="solution-title">Um parceiro.<br><span class="fade">Não um fornecedor.</span></h2>
+                    <p class="solution-subtitle">Não precisas de microgerir. Não precisas de perder tempo. <strong>Apenas envia os brutos e foca-te no que realmente importa</strong> — criar conteúdo, vender e crescer.</p>
+                </div>
+                <div class="accordion-list">
+                    <div class="accordion-item active">
+                        <div class="accordion-header">
+                            <div class="accordion-icon-wrapper">
+                                <div class="accordion-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div class="accordion-number">01</div>
+                            </div>
+                            <h3 class="accordion-title">Sistema de Produção Previsível</h3>
+                            <div class="accordion-toggle"><svg viewBox="0 0 24 24" fill="none"><path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+                        </div>
+                        <div class="accordion-content"><div class="accordion-content-inner"><p class="accordion-description">Não é apenas "edição rápida" — é um <strong>sistema completo de produção</strong>. Fluxo semanal consistente, calendário de publicações organizado e entregas que mantêm o teu canal ativo sem fricção. Previsibilidade = crescimento sustentável.</p></div></div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <div class="accordion-icon-wrapper">
+                                <div class="accordion-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div class="accordion-number">02</div>
+                            </div>
+                            <h3 class="accordion-title">Edição Focada em Conversão</h3>
+                            <div class="accordion-toggle"><svg viewBox="0 0 24 24" fill="none"><path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+                        </div>
+                        <div class="accordion-content"><div class="accordion-content-inner"><p class="accordion-description">Trabalho com negócios que <strong>faturam 6-7 dígitos/ano</strong>. Cada corte, transição e hook é pensado para <strong>retenção máxima e conversão real</strong>. Não apenas vídeos bonitos — vídeos que geram leads, vendas e agendamentos.</p></div></div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <div class="accordion-icon-wrapper">
+                                <div class="accordion-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div class="accordion-number">03</div>
+                            </div>
+                            <h3 class="accordion-title">Comunicação Direta e Simples</h3>
+                            <div class="accordion-toggle"><svg viewBox="0 0 24 24" fill="none"><path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+                        </div>
+                        <div class="accordion-content"><div class="accordion-content-inner"><p class="accordion-description"><strong>WhatsApp/Telegram direto</strong> ou a tua plataforma de preferência. Envias os brutos, recebo, edito e entrego. Feedback claro, revisões rápidas e zero fricção. Comunicação como deve ser: eficaz e simples.</p></div></div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <div class="accordion-icon-wrapper">
+                                <div class="accordion-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                                <div class="accordion-number">04</div>
+                            </div>
+                            <h3 class="accordion-title">Zero Microgestão Necessária</h3>
+                            <div class="accordion-toggle"><svg viewBox="0 0 24 24" fill="none"><path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+                        </div>
+                        <div class="accordion-content"><div class="accordion-content-inner"><p class="accordion-description">Trabalho sozinho e apenas aceito <strong>5 clientes em simultâneo</strong> para garantir atenção total a cada projeto. Entendes o que estás a construir, eu entendo edição estratégica. <strong>Delega, escala e foca-te no teu negócio</strong>.</p></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-right">
+                <div class="solution-image-wrapper">
+                    <img src="https://res.cloudinary.com/dooigd0d3/image/upload/v1770244054/Pro_Photos_for_Portf%C3%B3lio_4_pnr78y.png" alt="Ahlec a trabalhar" class="solution-image">
+                </div>
+                <div class="solution-warning">
+                    <div class="warning-header">
+                        <div class="warning-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+                        <div class="warning-title">Edição é Investimento, Não Custo</div>
+                    </div>
+                    <p class="warning-text">Os meus clientes recuperam em média <strong>10-15 horas semanais</strong> ao delegar a edição. Esse tempo traduz-se em mais criação de conteúdo, mais vendas ou mais clientes atendidos. <strong>Edição profissional não é despesa — é um investimento que multiplica o teu tempo disponível e autoridade no mercado</strong>.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================================
-         12. FOOTER
-    ============================================================ -->
-    <footer class="footer">
-        <div class="footer-container">
-
-            <div class="footer-top">
-
-                <!-- Brand -->
-                <div class="footer-brand">
-                    <div class="footer-logo">Ahlec <span class="highlight">Laia</span></div>
-                    <p class="footer-tagline">
-                        Editor de vídeo premium especializado em conteúdo que converte. Trabalho apenas com 5 clientes para garantir qualidade excepcional e resultados reais.
-                    </p>
-                    <div class="footer-socials">
-                        <a href="https://www.linkedin.com/in/ahlec-laia-3710b6276/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="currentColor"/></svg>
-                        </a>
-                        <a href="/cdn-cgi/l/email-protection#1f7e77737a7c6f6d7079766c6c7670717e735f78727e7673317c7072" class="footer-social-link" aria-label="Email">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg>
-                        </a>
-                        <a href="https://www.instagram.com/ahlec_magikraft/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="currentColor"/></svg>
-                        </a>
-                        <a href="https://wa.me/351965373520" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="WhatsApp">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Services -->
-                <div class="footer-column">
-                    <h4 class="footer-column-title">Serviços</h4>
-                    <a href="#precos" class="footer-link">Planos</a>
-                    <a href="#metodologia" class="footer-link">Metodologia</a>
-                    <a href="#portfolio" class="footer-link">Portfólio</a>
-                    <a href="#chamada" class="footer-link">Chamada Gratuita</a>
-                </div>
-
-                <!-- Company -->
-                <div class="footer-column">
-                    <h4 class="footer-column-title">Empresa</h4>
-                    <a href="#sobre" class="footer-link">Sobre Mim</a>
-                    <a href="#diferenciacao" class="footer-link">A Diferença</a>
-                    <a href="#trabalhos-recentes" class="footer-link">Trabalhos Recentes</a>
-                </div>
-
-                <!-- Legal -->
-                <div class="footer-column">
-                    <h4 class="footer-column-title">Legal</h4>
-                    <a href="/privacidade" class="footer-link">Privacidade</a>
-                    <a href="/termos" class="footer-link">Termos</a>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © 2025 <span class="highlight">Ahlec Laia</span>. Todos os direitos reservados.
-                </p>
-                <div class="footer-legal">
-                    <a href="/privacidade" class="footer-legal-link">Política de Privacidade</a>
-                    <a href="/termos" class="footer-legal-link">Termos de Serviço</a>
-                </div>
-            </div>
-
+<!-- ============================================================
+     6. METODOLOGIA
+============================================================ -->
+<section class="metodologia-section" id="metodologia">
+    <div class="metodologia-container">
+        <div class="metodologia-header">
+            <span class="metodologia-label">Como Funciona</span>
+            <h2 class="metodologia-title">A Metodologia</h2>
+            <p class="metodologia-subtitle">Processo simples, direto e focado em resultados. Publicas conteúdo consistente sem perder tempo com edição.</p>
         </div>
-    </footer>
+        <div class="framework-3c-compact">
+            <h3 class="framework-title">O Meu Processo: <span class="highlight">Framework 3C</span></h3>
+            <div class="framework-pillars">
+                <div class="framework-arrow"></div>
+                <div class="framework-pillar"><div class="pillar-number">1</div><div class="pillar-name">Clareza</div><div class="pillar-description">Identidade visual única</div></div>
+                <div class="framework-pillar"><div class="pillar-number">2</div><div class="pillar-name">Conteúdo</div><div class="pillar-description">5 vídeos editados por semana</div></div>
+                <div class="framework-pillar"><div class="pillar-number">3</div><div class="pillar-name">Crescimento</div><div class="pillar-description">Análise de métricas para melhorar resultados</div></div>
+            </div>
+        </div>
+        <div class="timeline-intro">
+            <h3 class="timeline-intro-title">Os 5 Passos do Processo</h3>
+            <p class="timeline-intro-subtitle">Da primeira reunião até à continuidade mensal — tudo pensado para máxima eficiência e resultados reais.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-circle">01</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 10H22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <h3 class="timeline-step-title">Pagamento + Onboarding</h3>
+                    <span class="timeline-duration">50% para começar</span>
+                    <p class="timeline-description">Após efetuar <strong>50% do pagamento</strong>, agendamos uma reunião para definir a tua <strong>identidade visual</strong> — cores, fontes, estilo, transições — tudo alinhado com a tua marca. Os restantes <strong>50% serão pagos no final do mês</strong>.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-circle">02</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 21H16M12 17V21M10 7L15 10L10 13V7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <h3 class="timeline-step-title">Início da Produção</h3>
+                    <span class="timeline-duration">Em 2 dias</span>
+                    <p class="timeline-description">Em <strong>dois dias</strong>, iniciamos a produção de conteúdos. Gravas os vídeos consoante a tua agenda, mas alinhado com a <strong>regularidade que queres publicar</strong>. Eu crio um <strong>calendário de publicações</strong> para manter tudo organizado.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-circle">03</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M21 15V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V15M17 8L12 3L7 8M12 3V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <h3 class="timeline-step-title">Fluxo de Entrega</h3>
+                    <span class="timeline-duration">Ritmo consistente</span>
+                    <p class="timeline-description">Envias os brutos → eu entrego cada vídeo editado <strong>rapidamente, mantendo o fluxo semanal consistente</strong>. Os vídeos ficam <strong>profissionais, com ritmo e aspecto premium</strong>, sem perder a tua autenticidade.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-circle">04</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 5H7C5.9 5 5 5.9 5 7V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V7C19 5.9 18.1 5 17 5H15M9 3H15C15.6 3 16 3.4 16 4V5H8V4C8 3.4 8.4 3 9 3ZM9 12H15M9 16H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <h3 class="timeline-step-title">Revisão Mensal</h3>
+                    <span class="timeline-duration">Otimização contínua</span>
+                    <p class="timeline-description">No <strong>final de cada mês</strong>, revemos os resultados (retenção, engajamento, conversões) e <strong>ajustamos a estratégia</strong> de edição. O objetivo não é manter — é <strong>melhorar constantemente</strong>.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-circle">05</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <h3 class="timeline-step-title">Pagamento Final + Continuidade</h3>
+                    <span class="timeline-duration">Final do mês</span>
+                    <p class="timeline-description">No final do mês, efetuás o <strong>pagamento dos restantes 50%</strong>. Se estiveres satisfeito, continuamos no mês seguinte. Se não, sem problema — <strong>não há contratos de permanência</strong>. Trabalho apenas com quem quer resultados reais.</p>
+                </div>
+            </div>
+        </div>
+        <div class="metodologia-footer">
+            <h3 class="metodologia-footer-title">Processo Simples e Eficaz</h3>
+            <p class="metodologia-footer-text">Com este processo, ganhas tempo para criar conteúdo e interagir com a tua comunidade, enquanto os teus vídeos ficam <strong>consistentes, com ritmo e aspecto profissional</strong>. Trabalho com um número limitado de clientes para garantir <strong>máxima qualidade e atenção a cada projeto</strong>.</p>
+            <div class="metodologia-guarantee">
+                <div class="guarantee-item"><div class="guarantee-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="guarantee-text">Entregas Rápidas</span></div>
+                <div class="guarantee-item"><div class="guarantee-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="guarantee-text">Sem Contratos</span></div>
+                <div class="guarantee-item"><div class="guarantee-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="guarantee-text">Revisão Mensal</span></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Calendly Script -->
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- ============================================================
+     7. DIFERENCIAÇÃO
+============================================================ -->
+<section class="comparacao-section" id="diferenciacao">
+    <div class="comparacao-container">
+        <div class="comparacao-header">
+            <span class="comparacao-label">A Diferença</span>
+            <h2 class="comparacao-title">Editor vs. <span class="highlight">Parceiro Estratégico</span></h2>
+            <p class="comparacao-subtitle">A maioria entrega vídeos. Eu construo sistemas de conteúdo que geram resultados e libertam o teu tempo.</p>
+        </div>
+        <div class="comparison-grid">
+            <div class="comparison-column traditional">
+                <div class="comparison-column-header">
+                    <h3 class="comparison-column-title">Editor Tradicional</h3>
+                    <p class="comparison-column-subtitle">Serviço transacional</p>
+                </div>
+                <ul class="comparison-list">
+                    <li class="comparison-item"><div class="comparison-icon"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6L18 18" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="comparison-text"><div class="comparison-text-title">Entregas inconsistentes</div><div class="comparison-text-desc">Atrasos frequentes, sem compromisso real</div></div></li>
+                    <li class="comparison-item"><div class="comparison-icon"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6L18 18" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="comparison-text"><div class="comparison-text-title">Comunicação lenta</div><div class="comparison-text-desc">E-mails intermináveis, respostas demoradas</div></div></li>
+                    <li class="comparison-item"><div class="comparison-icon"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6L18 18" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="comparison-text"><div class="comparison-text-title">Apenas execução</div><div class="comparison-text-desc">Edita o que pedes, sem visão estratégica</div></div></li>
+                    <li class="comparison-item"><div class="comparison-icon"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6L18 18" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="comparison-text"><div class="comparison-text-title">Microgestão constante</div><div class="comparison-text-desc">Revisões intermináveis, alinhamentos contínuos</div></div></li>
+                    <li class="comparison-item"><div class="comparison-icon"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6L18 18" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="comparison-text"><div class="comparison-text-title">Vídeos sem estratégia</div><div class="comparison-text-desc">Bonitos mas que não convertem nem geram resultados</div></div></li>
+                </ul>
+            </div>
+            <div class="comparison-column ahlec">
+                <div class="comparison-column-header">
+                    <h3 class="comparison-column-title">Ahlec (Parceiro Estratégico)</h3>
+                    <p class="comparison-column-subtitle">Parceria de longo prazo</p>
+                </div>
+                <ul class="comparison-list">
+                    <li class="comparison-item"><div class="comparison-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="comparison-text"><div class="comparison-text-title">Entregas semanais garantidas</div><div class="comparison-text-desc">Vídeos prontos toda a semana, sem atrasos</div></div></li>
+                    <li class="comparison-item"><div class="comparison-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="comparison-text"><div class="comparison-text-title">WhatsApp/Telegram direto</div><div class="comparison-text-desc">Resposta em 24h, comunicação clara e rápida</div></div></li>
+                    <li class="comparison-item"><div class="comparison-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="comparison-text"><div class="comparison-text-title">Edição focada em conversão</div><div class="comparison-text-desc">Cada corte com propósito: retenção, leads, vendas</div></div></li>
+                    <li class="comparison-item"><div class="comparison-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="comparison-text"><div class="comparison-text-title">Zero microgestão</div><div class="comparison-text-desc">Envia brutos → recebe vídeos prontos → ajustes rápidos</div></div></li>
+                    <li class="comparison-item"><div class="comparison-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="comparison-text"><div class="comparison-text-title">Resultados reais</div><div class="comparison-text-desc">Vídeos que geram leads, agendamentos e vendas</div></div></li>
+                </ul>
+            </div>
+        </div>
+        <div class="comparison-callout">
+            <h3 class="comparison-callout-title">Já Tentaste Delegar e Não Funcionou?</h3>
+            <p class="comparison-callout-text">A maioria já trabalhou com freelancers que <strong>atrasaram</strong>, <strong>não entregaram qualidade</strong> ou <strong>exigiram microgestão constante</strong>. A diferença? Compromisso real, comunicação direta, resultados garantidos.</p>
+            <a href="https://wa.me/351965373520?text=Ol%C3%A1%20Ahlec%2C%20cansei-me%20de%20editores%20que%20atrasam%20e%20n%C3%A3o%20entregam%20resultados." target="_blank" rel="noopener noreferrer" class="comparison-callout-button">
+                <span>Falar com o Ahlec</span>
+                <span class="cta-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/></svg></span>
+            </a>
+        </div>
+    </div>
+</section>
 
-    <!-- Main JS -->
-    <script src="js/main.js"></script>
+<!-- ============================================================
+     8. PREÇOS — Essencial | Elite (centro) | Pro
+============================================================ -->
+<section class="pricing-section" id="precos">
+    <div class="pricing-container">
+        <div class="pricing-header">
+            <span class="pricing-label">Investimento</span>
+            <h2 class="pricing-title">Escolhe o Teu Plano</h2>
+            <p class="pricing-subtitle">Pacotes mensais com entregas semanais garantidas. Sem contratos de permanência — cancela quando quiseres.</p>
+        </div>
+        <div class="pricing-grid">
+            <!-- Essencial -->
+            <div class="pricing-card">
+                <div class="pricing-card-header">
+                    <div class="pricing-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8C21 6.9 20.1 6 19 6H5C3.9 6 3 6.9 3 8V16C3 17.1 3.9 18 5 18H19C20.1 18 21 17.1 21 16Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 10H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <h3 class="pricing-name">Essencial</h3>
+                    <div class="pricing-price"><span class="pricing-amount">397</span><span class="pricing-currency">€</span><span class="pricing-period">/ mês</span></div>
+                </div>
+                <ul class="pricing-features">
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Identidade visual única</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>3 vídeos/semana</strong> (12 vídeos/mês)</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>1 ronda de revisões por vídeo</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Comunicação Rápida e Transparente</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Entregas rápidas com fluxo consistente</span></li>
+                </ul>
+                <a href="https://wa.me/351965373520?text=Ol%C3%A1%20Ahlec%2C%20estou%20interessado%20no%20Pacote%20Essencial%20(397%E2%82%AC%2Fm%C3%AAs)." target="_blank" rel="noopener noreferrer" class="pricing-cta">Escolher Essencial</a>
+            </div>
+            <!-- Elite (CENTRO / FEATURED) -->
+            <div class="pricing-card featured">
+                <div class="pricing-badge"><div class="badge-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></div><span>Mais Popular</span></div>
+                <div class="pricing-card-header">
+                    <div class="pricing-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <h3 class="pricing-name">Elite</h3>
+                    <div class="pricing-price"><span class="pricing-amount">1197</span><span class="pricing-currency">€</span><span class="pricing-period">/ mês</span></div>
+                </div>
+                <ul class="pricing-features">
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Identidade visual única</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>5 vídeos/semana</strong> (20 vídeos/mês)</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>4 Reels Premium</strong> com edição avançada</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>3 rondas de revisões por vídeo</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Reunião semanal para análise de estatísticas</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Acesso total à minha especialização</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Comunicação Rápida e Transparente</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Entrega prioritária e fluxo consistente</span></li>
+                </ul>
+                <a href="https://wa.me/351965373520?text=Ol%C3%A1%20Ahlec%2C%20quero%20o%20Pacote%20Elite%20(1197%E2%82%AC%2Fm%C3%AAs)." target="_blank" rel="noopener noreferrer" class="pricing-cta">Escolher Elite</a>
+            </div>
+            <!-- Pro -->
+            <div class="pricing-card">
+                <div class="pricing-card-header">
+                    <div class="pricing-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <h3 class="pricing-name">Pro</h3>
+                    <div class="pricing-price"><span class="pricing-amount">597</span><span class="pricing-currency">€</span><span class="pricing-period">/ mês</span></div>
+                </div>
+                <ul class="pricing-features">
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Identidade visual única</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>5 vídeos/semana</strong> (20 vídeos/mês)</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>2 rondas de revisões por vídeo</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Reunião mensal para análise de estatísticas</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Comunicação Rápida e Transparente</span></li>
+                    <li><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Entregas rápidas com fluxo consistente</span></li>
+                </ul>
+                <a href="https://wa.me/351965373520?text=Ol%C3%A1%20Ahlec%2C%20estou%20interessado%20no%20Pacote%20Pro%20(597%E2%82%AC%2Fm%C3%AAs)." target="_blank" rel="noopener noreferrer" class="pricing-cta">Escolher Pro</a>
+            </div>
+            <!-- Footer largura total -->
+            <div class="pricing-footer">
+                <p class="pricing-footer-text"><strong>Todos os planos incluem Estratégia e Planeamento de conteúdo Personalizado</strong>. Sem contratos de permanência — cancela quando quiseres.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- ============================================================
+     9. CHAMADA GRATUITA + CALENDLY
+============================================================ -->
+<section class="freecall-section" id="chamada">
+    <div class="freecall-container">
+        <div class="freecall-card">
+            <!-- Esquerda: Conteúdo -->
+            <div class="freecall-content">
+                <span class="freecall-label">Chamada Estratégica Gratuita</span>
+                <h2 class="freecall-title">Vamos Analisar o Teu <span class="highlight">Conteúdo Juntos</span></h2>
+                <p class="freecall-description">Agenda uma chamada estratégica gratuita de 15-20 minutos. Vou analisar o teu conteúdo atual, propor uma estratégia personalizada e mostrar-te como posso ajudar a escalar com vídeos que convertem.</p>
+                <ul class="freecall-benefits">
+                    <li><div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Análise do teu conteúdo atual (15-20 min)</span></li>
+                    <li><div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Estratégia personalizada para o teu nicho</span></li>
+                    <li><div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Proposta de identidade visual única</span></li>
+                    <li><div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Alinhamento de expectativas e timelines</span></li>
+                    <li><div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Zero pressão, zero compromisso</span></li>
+                </ul>
+                <p class="freecall-note">Resposta garantida em 24h</p>
+            </div>
+            <!-- Direita: Calendly Embed -->
+            <div class="freecall-calendly">
+                <div class="calendly-inline-widget"
+                     data-url="https://calendly.com/ahlecprofissional/reuniao-estrategica-gratuita?back=1&month=2026-02"
+                     style="min-width:280px;height:700px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     10. SOBRE / ESPECIALISTA
+============================================================ -->
+<section class="about-section" id="sobre">
+    <div class="about-container">
+        <div class="about-profile">
+            <div class="about-avatar"><img src="https://res.cloudinary.com/dooigd0d3/image/upload/v1769610431/New_Perfil_4_wenty9.png" alt="Ahlec Laia"></div>
+            <div class="about-profile-info">
+                <div class="about-name">Ahlec Laia</div>
+                <div class="about-specialization">Editor de Vídeo Especializado</div>
+            </div>
+        </div>
+        <div class="about-text">
+            <p>Sou o <strong>Ahlec</strong> e desde sempre imaginei mundos diferentes — formas de contar histórias que realmente importam. O que me move não é apenas criar vídeos bonitos, mas <strong>dar vida a narrativas que inspiram e convertem</strong>.</p>
+            <p>Durante a adolescência, comecei a explorar edição de vídeo de forma autodidata, sempre de mãos à obra nos meus próprios projetos. Com o tempo, formei-me em <strong>Cinema e Produção Audiovisual na ETIC</strong>, onde aprofundei o conhecimento em todos os aspetos da produção — desde estratégia até execução técnica.</p>
+            <p>Este é o meu estilo: <strong>rico em detalhe, vibrante e cheio de referências que contam uma história</strong>. Mas explorar novos estilos e técnicas é essencial para mim, porque a aprendizagem nunca para. Trabalho sozinho porque ainda não encontrei editores com o nível de <strong>compromisso e atenção ao detalhe</strong> que os meus clientes esperam.</p>
+        </div>
+        <div class="about-helped">
+            <span class="about-helped-label">Com Quem Trabalho</span>
+            <div class="about-helped-list">Trabalho com pessoas que <strong>não procuram o editor mais barato, mas o parceiro certo</strong>. Pessoas que sabem o que querem, confiam no processo e entendem que <strong>resultados reais exigem compromisso de ambas as partes</strong>.</div>
+        </div>
+        <div class="about-social">
+            <a href="https://www.linkedin.com/in/ahlec-laia-3710b6276/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="/cdn-cgi/l/email-protection#a2c3cacec7c1d2d0cdc4cbd1d1cbcdccc3cee2c5cfc3cbce8cc1cdcf" class="social-link" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+            <a href="https://www.instagram.com/ahlec_magikraft/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://wa.me/351965373520" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     11. TRABALHOS RECENTES
+============================================================ -->
+<section class="portfolio-section recent-work-section" id="trabalhos-recentes">
+    <div class="portfolio-header" style="text-align:center;margin-bottom:100px;padding:0 40px;">
+        <h2 class="recent-work-title">Trabalhos Recentes</h2>
+        <p style="font-size:1.1rem;color:rgba(255,255,255,0.6);max-width:680px;margin:0 auto 36px;">Cada projeto foi pensado para converter, reter e escalar o negócio dos meus clientes.</p>
+        <div class="carousel-controls">
+            <button class="carousel-control-btn" id="toggleAutoScroll">
+                <svg viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
+                <span>Pausar Auto-Scroll</span>
+            </button>
+        </div>
+    </div>
+    <div class="recent-carousel-wrapper" id="recentCarouselWrapper">
+        <div class="recent-carousel-track" id="recentCarouselTrack">
+            <!-- Coluna 1 -->
+            <div class="video-column">
+                <div class="video-card landscape" data-video="https://www.youtube.com/embed/HLrXPtUo01A" data-type="youtube" data-aspect="landscape" data-category="YouTube" data-title="Como Criar Vídeos que Vendem" data-description="Estratégia completa de edição para conversão.">
+                    <img src="https://img.youtube.com/vi/HLrXPtUo01A/maxresdefault.jpg" alt="YouTube 01" class="video-thumbnail" loading="lazy">
+                    <div class="video-overlay"><span class="video-category">YouTube</span><h3 class="video-title">Como Criar Vídeos que Vendem</h3><p class="video-description-text">Estratégia completa de edição.</p></div>
+                    <div class="play-icon-recent"></div>
+                </div>
+                <div class="video-card portrait" data-video="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310914/Javier_Milei_Antes_Agora_Politica_-_Ahlec_Laia_1080p_h264_fg3gke.mp4" data-type="direct" data-aspect="portrait" data-category="Reel" data-title="Javier Milei — Antes e Agora" data-description="Storytelling político impactante com narrativa visual forte.">
+                    <video class="video-thumbnail" muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310914/Javier_Milei_Antes_Agora_Politica_-_Ahlec_Laia_1080p_h264_fg3gke.mp4#t=0.5" type="video/mp4"></video>
+                    <div class="video-overlay"><span class="video-category">Reel</span><h3 class="video-title">Javier Milei — Antes e Agora</h3><p class="video-description-text">Storytelling político impactante.</p></div>
+                    <div class="play-icon-recent"></div>
+                </div>
+            </div>
+            <!-- Coluna 2 -->
+            <div class="video-column">
+                <div class="video-card portrait" data-video="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310923/O_que_%C3%A9_o_Homeschooling_-_Educa%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_v0e2kr.mp4" data-type="direct" data-aspect="portrait" data-category="Educação" data-title="O que é o Homeschooling?" data-description="Conteúdo educativo com edição clean e informativa.">
+                    <video class="video-thumbnail" muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310923/O_que_%C3%A9_o_Homeschooling_-_Educa%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_v0e2kr.mp4#t=0.5" type="video/mp4"></video>
+                    <div class="video-overlay"><span class="video-category">Educação</span><h3 class="video-title">O que é o Homeschooling?</h3><p class="video-description-text">Conteúdo educativo premium.</p></div>
+                    <div class="play-icon-recent"></div>
+                </div>
+                <div class="video-card portrait" data-video="https://www.youtube.com/embed/4HC8ra7eCqM" data-type="youtube" data-aspect="portrait" data-category="YouTube" data-title="Edição Premium para Coaches" data-description="Case study de cliente com resultados comprovados.">
+                    <img src="https://img.youtube.com/vi/4HC8ra7eCqM/maxresdefault.jpg" alt="YouTube 02" class="video-thumbnail" loading="lazy">
+                    <div class="video-overlay"><span class="video-category">YouTube</span><h3 class="video-title">Edição Premium para Coaches</h3><p class="video-description-text">Case study com resultados.</p></div>
+                    <div class="play-icon-recent"></div>
+                </div>
+            </div>
+            <!-- Coluna 3 -->
+            <div class="video-column">
+                <div class="video-card landscape" data-video="https://www.youtube.com/embed/B_XmIqvukPM" data-type="youtube" data-aspect="landscape" data-category="YouTube" data-title="Storytelling que Converte" data-description="Técnicas de edição para máxima retenção.">
+                    <img src="https://img.youtube.com/vi/B_XmIqvukPM/maxresdefault.jpg" alt="YouTube 03" class="video-thumbnail" loading="lazy">
+                    <div class="video-overlay"><span class="video-category">YouTube</span><h3 class="video-title">Storytelling que Converte</h3><p class="video-description-text">Máxima retenção garantida.</p></div>
+                    <div class="play-icon-recent"></div>
+                </div>
+                <div class="video-card portrait" data-video="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310921/Cobertura_de_Evento_-_Ahlec_Laia_1080p_h264_tcwsis.mp4" data-type="direct" data-aspect="portrait" data-category="Evento" data-title="Cobertura de Evento Premium" data-description="Edição dinâmica de evento corporativo com múltiplos ângulos.">
+                    <video class="video-thumbnail" muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310921/Cobertura_de_Evento_-_Ahlec_Laia_1080p_h264_tcwsis.mp4#t=0.5" type="video/mp4"></video>
+                    <div class="video-overlay"><span class="video-category">Evento</span><h3 class="video-title">Cobertura de Evento Premium</h3><p class="video-description-text">Edição corporativa dinâmica.</p></div>
+                    <div class="play-icon-recent"></div>
+                </div>
+            </div>
+            <!-- Coluna 4 -->
+            <div class="video-column">
+                <div class="video-card landscape" data-video="https://www.youtube.com/embed/0Rwt55AWSUc" data-type="youtube" data-aspect="landscape" data-category="Reel" data-title="Transformação Fitness" data-description="Antes e depois com métricas claras e hooks poderosos.">
+                    <img src="https://img.youtube.com/vi/0Rwt55AWSUc/maxresdefault.jpg" alt="YouTube 04" class="video-thumbnail" loading="lazy">
+                    <div class="video-overlay"><span class="video-category">Reel</span><h3 class="video-title">Transformação Fitness</h3><p class="video-description-text">Antes e depois impactante.</p></div>
+                    <div class="play-icon-recent"></div>
+                </div>
+                <div class="video-card landscape" data-video="https://www.youtube.com/embed/XO2152gjKW4" data-type="youtube" data-aspect="landscape" data-category="Ad" data-title="Ad de Alto Impacto" data-description="Estratégia de venda direta com hook validado.">
+                    <img src="https://img.youtube.com/vi/XO2152gjKW4/maxresdefault.jpg" alt="YouTube 05" class="video-thumbnail" loading="lazy">
+                    <div class="video-overlay"><span class="video-category">Ad</span><h3 class="video-title">Ad de Alto Impacto</h3><p class="video-description-text">Hook validado e CTA direto.</p></div>
+                    <div class="play-icon-recent"></div>
+                </div>
+            </div>
+            <!-- Coluna 5 -->
+            <div class="video-column">
+                <div class="video-card landscape" data-video="https://www.youtube.com/embed/TyI-mSr2_FM" data-type="youtube" data-aspect="landscape" data-category="VSL" data-title="VSL Completa — Elite Agency" data-description="Estrutura de conversão comprovada com storytelling estratégico.">
+                    <img src="https://img.youtube.com/vi/TyI-mSr2_FM/maxresdefault.jpg" alt="YouTube 06" class="video-thumbnail" loading="lazy">
+                    <div class="video-overlay"><span class="video-category">VSL</span><h3 class="video-title">VSL Completa — Elite Agency</h3><p class="video-description-text">Conversão comprovada.</p></div>
+                    <div class="play-icon-recent"></div>
+                </div>
+                <div class="video-card landscape" data-video="https://www.youtube.com/embed/P2FcdaP1oXo" data-type="youtube" data-aspect="landscape" data-category="Testemunho" data-title="Cliente Real — Resultados" data-description="Testemunho autêntico com dados concretos e impacto emocional.">
+                    <img src="https://img.youtube.com/vi/P2FcdaP1oXo/maxresdefault.jpg" alt="YouTube 07" class="video-thumbnail" loading="lazy">
+                    <div class="video-overlay"><span class="video-category">Testemunho</span><h3 class="video-title">Cliente Real — Resultados</h3><p class="video-description-text">Dados concretos e impacto.</p></div>
+                    <div class="play-icon-recent"></div>
+                </div>
+            </div>
+            <!-- Duplicatas -->
+            <div class="video-column"><div class="video-card landscape" data-video="https://www.youtube.com/embed/HLrXPtUo01A" data-type="youtube" data-aspect="landscape" data-category="YouTube" data-title="Como Criar Vídeos que Vendem" data-description="Estratégia completa de edição para conversão."><img src="https://img.youtube.com/vi/HLrXPtUo01A/maxresdefault.jpg" alt="" class="video-thumbnail" loading="lazy"><div class="video-overlay"><span class="video-category">YouTube</span><h3 class="video-title">Como Criar Vídeos que Vendem</h3><p class="video-description-text">Estratégia completa.</p></div><div class="play-icon-recent"></div></div><div class="video-card portrait" data-video="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310914/Javier_Milei_Antes_Agora_Politica_-_Ahlec_Laia_1080p_h264_fg3gke.mp4" data-type="direct" data-aspect="portrait" data-category="Reel" data-title="Javier Milei — Antes e Agora" data-description="Storytelling político impactante."><video class="video-thumbnail" muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310914/Javier_Milei_Antes_Agora_Politica_-_Ahlec_Laia_1080p_h264_fg3gke.mp4#t=0.5" type="video/mp4"></video><div class="video-overlay"><span class="video-category">Reel</span><h3 class="video-title">Javier Milei — Antes e Agora</h3><p class="video-description-text">Storytelling político.</p></div><div class="play-icon-recent"></div></div></div>
+            <div class="video-column"><div class="video-card portrait" data-video="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310923/O_que_%C3%A9_o_Homeschooling_-_Educa%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_v0e2kr.mp4" data-type="direct" data-aspect="portrait" data-category="Educação" data-title="O que é o Homeschooling?" data-description="Conteúdo educativo premium."><video class="video-thumbnail" muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310923/O_que_%C3%A9_o_Homeschooling_-_Educa%C3%A7%C3%A3o_-_Ahlec_Laia_1080p_h264_v0e2kr.mp4#t=0.5" type="video/mp4"></video><div class="video-overlay"><span class="video-category">Educação</span><h3 class="video-title">O que é o Homeschooling?</h3><p class="video-description-text">Conteúdo educativo.</p></div><div class="play-icon-recent"></div></div><div class="video-card portrait" data-video="https://www.youtube.com/embed/4HC8ra7eCqM" data-type="youtube" data-aspect="portrait" data-category="YouTube" data-title="Edição Premium para Coaches" data-description="Case study com resultados."><img src="https://img.youtube.com/vi/4HC8ra7eCqM/maxresdefault.jpg" alt="" class="video-thumbnail" loading="lazy"><div class="video-overlay"><span class="video-category">YouTube</span><h3 class="video-title">Edição Premium para Coaches</h3><p class="video-description-text">Case study.</p></div><div class="play-icon-recent"></div></div></div>
+            <div class="video-column"><div class="video-card landscape" data-video="https://www.youtube.com/embed/B_XmIqvukPM" data-type="youtube" data-aspect="landscape" data-category="YouTube" data-title="Storytelling que Converte" data-description="Técnicas de edição para máxima retenção."><img src="https://img.youtube.com/vi/B_XmIqvukPM/maxresdefault.jpg" alt="" class="video-thumbnail" loading="lazy"><div class="video-overlay"><span class="video-category">YouTube</span><h3 class="video-title">Storytelling que Converte</h3><p class="video-description-text">Máxima retenção.</p></div><div class="play-icon-recent"></div></div><div class="video-card portrait" data-video="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310921/Cobertura_de_Evento_-_Ahlec_Laia_1080p_h264_tcwsis.mp4" data-type="direct" data-aspect="portrait" data-category="Evento" data-title="Cobertura de Evento Premium" data-description="Edição corporativa dinâmica."><video class="video-thumbnail" muted loop playsinline preload="none"><source src="https://res.cloudinary.com/dooigd0d3/video/upload/v1770310921/Cobertura_de_Evento_-_Ahlec_Laia_1080p_h264_tcwsis.mp4#t=0.5" type="video/mp4"></video><div class="video-overlay"><span class="video-category">Evento</span><h3 class="video-title">Cobertura de Evento Premium</h3><p class="video-description-text">Edição corporativa.</p></div><div class="play-icon-recent"></div></div></div>
+            <div class="video-column"><div class="video-card landscape" data-video="https://www.youtube.com/embed/0Rwt55AWSUc" data-type="youtube" data-aspect="landscape" data-category="Reel" data-title="Transformação Fitness" data-description="Antes e depois impactante."><img src="https://img.youtube.com/vi/0Rwt55AWSUc/maxresdefault.jpg" alt="" class="video-thumbnail" loading="lazy"><div class="video-overlay"><span class="video-category">Reel</span><h3 class="video-title">Transformação Fitness</h3><p class="video-description-text">Antes e depois.</p></div><div class="play-icon-recent"></div></div><div class="video-card landscape" data-video="https://www.youtube.com/embed/XO2152gjKW4" data-type="youtube" data-aspect="landscape" data-category="Ad" data-title="Ad de Alto Impacto" data-description="Hook validado e CTA direto."><img src="https://img.youtube.com/vi/XO2152gjKW4/maxresdefault.jpg" alt="" class="video-thumbnail" loading="lazy"><div class="video-overlay"><span class="video-category">Ad</span><h3 class="video-title">Ad de Alto Impacto</h3><p class="video-description-text">Hook validado.</p></div><div class="play-icon-recent"></div></div></div>
+            <div class="video-column"><div class="video-card landscape" data-video="https://www.youtube.com/embed/TyI-mSr2_FM" data-type="youtube" data-aspect="landscape" data-category="VSL" data-title="VSL Completa — Elite Agency" data-description="Conversão comprovada."><img src="https://img.youtube.com/vi/TyI-mSr2_FM/maxresdefault.jpg" alt="" class="video-thumbnail" loading="lazy"><div class="video-overlay"><span class="video-category">VSL</span><h3 class="video-title">VSL Completa — Elite Agency</h3><p class="video-description-text">Conversão comprovada.</p></div><div class="play-icon-recent"></div></div><div class="video-card landscape" data-video="https://www.youtube.com/embed/P2FcdaP1oXo" data-type="youtube" data-aspect="landscape" data-category="Testemunho" data-title="Cliente Real — Resultados" data-description="Dados concretos e impacto."><img src="https://img.youtube.com/vi/P2FcdaP1oXo/maxresdefault.jpg" alt="" class="video-thumbnail" loading="lazy"><div class="video-overlay"><span class="video-category">Testemunho</span><h3 class="video-title">Cliente Real — Resultados</h3><p class="video-description-text">Dados concretos.</p></div><div class="play-icon-recent"></div></div></div>
+        </div>
+    </div>
+    <!-- Modal Trabalhos Recentes -->
+    <div class="recent-modal" id="recentModal">
+        <button class="modal-close" id="recentModalClose" aria-label="Fechar"><span></span></button>
+        <div class="modal-content" id="recentModalContent">
+            <iframe id="recentModalIframe" class="modal-iframe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:none;"></iframe>
+            <video id="recentModalVideo" class="modal-video" controls style="display:none;"><source src="" type="video/mp4"></video>
+            <div class="modal-info">
+                <span class="modal-category" id="recentModalCategory"></span>
+                <h3 class="modal-title" id="recentModalTitle"></h3>
+                <p class="modal-description" id="recentModalDescription"></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     12. FOOTER
+============================================================ -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">Ahlec <span class="highlight">Laia</span></div>
+                <p class="footer-tagline">Editor de vídeo premium especializado em conteúdo que converte. Trabalho apenas com 5 clientes para garantir qualidade excepcional e resultados reais.</p>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/ahlec-laia-3710b6276/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                    <a href="/cdn-cgi/l/email-protection#81e0e9ede4e2f1f3eee7e8f2f2e8eeefe0edc1e6ece0e8edafe2eeec" class="footer-social-link" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+                    <a href="https://www.instagram.com/ahlec_magikraft/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    <a href="https://wa.me/351965373520" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-column-title">Serviços</h4>
+                <a href="#precos"        class="footer-link">Planos</a>
+                <a href="#metodologia"   class="footer-link">Metodologia</a>
+                <a href="#portfolio"     class="footer-link">Portfólio</a>
+                <a href="#chamada"       class="footer-link">Chamada Gratuita</a>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-column-title">Empresa</h4>
+                <a href="#sobre"              class="footer-link">Sobre Mim</a>
+                <a href="#diferenciacao"      class="footer-link">A Diferença</a>
+                <a href="#trabalhos-recentes" class="footer-link">Trabalhos Recentes</a>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-column-title">Legal</h4>
+                <a href="/privacidade" class="footer-link">Privacidade</a>
+                <a href="/termos"      class="footer-link">Termos</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2025 <span class="highlight">Ahlec Laia</span>. Todos os direitos reservados.</p>
+            <div class="footer-legal">
+                <a href="/privacidade" class="footer-legal-link">Política de Privacidade</a>
+                <a href="/termos"      class="footer-legal-link">Termos de Serviço</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Calendly -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- JS -->
+<script src="js/main.js"></script>
 </body>
 </html>
