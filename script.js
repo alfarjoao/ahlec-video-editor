@@ -96,7 +96,7 @@ function initSectionIndicator() {
    3. STICKY HEADER
    ============================================================ */
 function initStickyHeader() {
-    const header = document.getElementById('siteHeader');
+    const header = document.getElementById('site-header');
     if (!header) return;
 
     function onScroll() {
@@ -684,7 +684,7 @@ function initSmoothScroll() {
             const target = document.querySelector(href);
             if (!target) return;
             e.preventDefault();
-            const headerH = document.getElementById('siteHeader')?.offsetHeight || 70;
+            const headerH = document.getElementById('site-header')?.offsetHeight || 70;
             const targetY = target.getBoundingClientRect().top + window.scrollY - headerH;
             window.scrollTo({ top: targetY, behavior: 'smooth' });
         });
