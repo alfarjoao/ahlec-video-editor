@@ -266,23 +266,6 @@
 })();
 
 /* ============================================================
-   STICKY CTA — FECHAR
-============================================================ */
-(function () {
-    const strip = document.getElementById('ahlecCapacityStrip');
-    const btn = document.getElementById('ahlecCloseBtn');
-    if (!strip || !btn) return;
-    btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        strip.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
-        strip.style.opacity = '0';
-        strip.style.transform = 'translateX(-50%) translateY(20px)';
-        setTimeout(() => { strip.style.display = 'none'; }, 350);
-    }, true);
-})();
-
-/* ============================================================
    ACCORDION (Solução)
 ============================================================ */
 (function () {
