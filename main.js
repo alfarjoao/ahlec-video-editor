@@ -142,7 +142,7 @@
 
     const cardW = 300, gap = 24, count = 7;
     const totalW = (cardW + gap) * count;
-    let vel = -0.8, isDrag = false, startX = 0, scrollL = 0, cur = 0, raf;
+    let vel = -0.35, isDrag = false, startX = 0, scrollL = 0, cur = 0, raf;
     let dragMoved = false;
 
     function loop() {
@@ -156,7 +156,7 @@
     loop();
 
     wrapper.addEventListener('mouseenter', () => { vel = 0; });
-    wrapper.addEventListener('mouseleave', () => { if (!isDrag) vel = -0.8; });
+    wrapper.addEventListener('mouseleave', () => { if (!isDrag) vel = -0.35; });
 
     wrapper.addEventListener('mousedown', e => {
         isDrag = true; dragMoved = false; vel = 0;
@@ -175,7 +175,7 @@
     function endDrag() {
         isDrag = false;
         wrapper.style.cursor = 'grab';
-        vel = -0.8;
+        vel = -0.35;
         loop();
     }
     wrapper.addEventListener('mouseup', endDrag);
@@ -194,7 +194,7 @@
         cur = scrollL + walk;
         track.style.transform = `translateX(${cur}px)`;
     }, { passive: true });
-    wrapper.addEventListener('touchend', () => { isDrag = false; vel = -0.8; loop(); });
+    wrapper.addEventListener('touchend', () => { isDrag = false; vel = -0.35; loop(); });
 
     // Hover preview videos
     track.querySelectorAll('.video-card').forEach(card => {
@@ -228,6 +228,8 @@
     if (!modal || !closeBtn || !player) return;
     const wrapper = document.getElementById('carouselWrapper');
 
+    let scrollPos = 0;
+
     document.querySelectorAll('#carouselTrack .video-card').forEach(card => {
         card.addEventListener('click', () => {
             if (wrapper && wrapper._isDragMoved && wrapper._isDragMoved()) return;
@@ -255,6 +257,8 @@
                 v.style.cssText = 'width:100%;height:100%;object-fit:contain;';
                 player.appendChild(v);
             }
+            scrollPos = window.pageYOffset;
+            document.body.style.top = `-${scrollPos}px`;
             modal.classList.add('active');
             document.body.classList.add('modal-open');
         });
@@ -263,6 +267,8 @@
     function closeModal() {
         modal.classList.remove('active');
         document.body.classList.remove('modal-open');
+        document.body.style.top = '';
+        window.scrollTo(0, scrollPos);
         player.innerHTML = '';
     }
     closeBtn.addEventListener('click', closeModal);
