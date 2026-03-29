@@ -242,6 +242,13 @@
                 f.setAttribute('allowfullscreen', '');
                 f.style.cssText = 'width:100%;height:100%;border:none;';
                 player.appendChild(f);
+            } else if (type === 'youtube') {
+                const f = document.createElement('iframe');
+                f.src = src + '?autoplay=1&rel=0';
+                f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                f.setAttribute('allowfullscreen', '');
+                f.style.cssText = 'width:100%;height:100%;border:none;';
+                player.appendChild(f);
             } else {
                 const v = document.createElement('video');
                 v.src = src; v.controls = true; v.autoplay = true;
