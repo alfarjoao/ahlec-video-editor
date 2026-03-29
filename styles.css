@@ -497,18 +497,18 @@ body.modal-open {
 }
 
 .video-description {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    padding: 14px 22px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0) 100%);
-    border-radius: 8px 8px 0 0;
+    margin-bottom: 16px;
+    padding: 18px 22px;
+    background: rgba(30,58,95,0.04);
+    border: 1px solid rgba(42,82,152,0.15);
+    border-radius: 6px;
     text-align: center;
     transition: all 0.4s ease;
-    z-index: 2;
 }
 
 .video-description:hover {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0) 100%);
+    background: rgba(30,58,95,0.06);
+    border-color: rgba(42,82,152,0.22);
 }
 
 .video-description-text {
